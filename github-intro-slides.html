@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Version control with GitHub</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Eirini Zormpa" />
+    <meta name="date" content="2022-07-12" />
+    <script src="github-intro-slides_files/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+background-image: url("images/tim-mossholder-zs-pagqgenq-unsplash_1_0.jpg")
+background-position: center
+background-size: contain
+
+# &lt;span style="     color: white !important;" &gt;Version Control with GitHub: A gentle introduction for beginners&lt;/span&gt;
+
+### &lt;span style="     color: white !important;" &gt;Eirini Zormpa&lt;/span&gt;
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+Previous trainers: Kirstie Whitaker, Malvika Sharan, Yo Yehudi, Cassandra Gould van Praag, Esther Plomp, Sophia Batchelor
+
+
+---
+
+# Hi, I'm Eirini 👋🏻
+
+- 👶🏻 **BA in English Language and Literature** @Aristotle University of Thessaloniki
+- 👩🏻‍🎓 **MSc in Language Sciences**, Neuroscience stream @Reading University
+--
+
+- 👩🏻‍🔬 **PhD Candidate** @Max Planck Institute for Psycholinguistics
+  - started using programming with `R` and using `git` for version control (locally)
+--
+
+- 👩🏻‍🏫 **Trainer on Research Data Management and Open Science** @Delft University of Technology
+  - started using GitHub more frequently for sharing resources and contributing to projects
+--
+
+- 👩🏻‍💻 **Community Manager Open Collaboration** in AIM RSF @The Alan Turing Institute
+  - using GitHub almost daily, mostly for collaboration
+
+---
+
+# What is version control?
+
+&lt;!--
+Alternative definitions
+- [Software Carpentry](https://swcarpentry.github.io/git-novice/01-basics/index.html): Version control systems start with a base version of the document and then record changes you make each step of the way. You can think of it as a recording of your progress: you can rewind to start at the base document and play back each change you made, eventually arriving at your more recent version.
+
+- [Mozilla Science Lab](https://mozillascience.github.io/study-group-orientation/index.html): version control: the task of managing the many contributions your group makes to shared working documents
+--&gt;
+
+.pull-left[
+
+&lt;img src="images/VersionControl.jpg" width="100%" /&gt;
+
+]
+
+--
+
+.pull-right[
+
+### The Turing Way
+
+&gt; Version control is an approach to **recording changes** in a file or set of files **over time** so that you and your collaborators can:
+
+&gt;- track their history,
+&gt;- review any changes, and
+&gt;- go back to earlier versions.
+
+]
+
+.footnote[
+Image is a *The Turing Way* project illustration by Scriberia  (DOI: [10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.6560477)).
+Quote from the [*The Turing Way: A handbook for reproducible, ethical and collaborative research (1.0.1)*](https://the-turing-way.netlify.app/reproducible-research/vcs.html)  (The Turing Way Community, 2021; DOI: [10.5281/zenodo.6533831](https://doi.org/10.5281/zenodo.6533831)). Both used under a [CC-BY licence](https://creativecommons.org/licenses/by/4.0/).
+]
+
+---
+
+# Examples of version control systems
+
+.pull-left[
+
+### Versions in multiple files
+
+A straightforward way to version files is by adding versions or explanatory labels to the name:
+- v1. v2, v3 etc.
+- draft, commentsAB, etc.
+
+]
+
+---
+
+.center[
+
+&lt;img src="images/MultipleFiles1.png" width="100%" /&gt;
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html),  used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+&lt;img src="images/MultipleFiles2.png" width="100%" /&gt;
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+&lt;img src="images/MultipleFiles3.png" width="100%" /&gt;
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+&lt;img src="images/MultipleFiles4.png" width="100%" /&gt;
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+# Examples of version control systems
+
+.pull-left[
+
+### Versions in multiple files
+
+A straightforward way to version files is by adding versions or explanatory labels to the name:
+- v1. v2, v3 etc.
+- draft, commentsAB, etc.
+
+]
+
+.pull-right[
+
+### Versions in single file
+
+Some software record all the changes in a file, allowing you to explore its history:
+
+- Basic: Google Drive, Dropbox, Overleaf
+- Advanced: Subversion, git
+
+]
+
+---
+
+.center[
+
+&lt;img src="images/SingleFile1.png" width="100%" /&gt;
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+&lt;img src="images/SingleFile2.png" width="100%" /&gt;
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+&lt;img src="images/SingleFile3.png" width="100%" /&gt;
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+&lt;img src="images/SingleFile4.png" width="100%" /&gt;
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+&lt;img src="images/SingleFile5.png" width="100%" /&gt;
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+&lt;img src="images/SingleFile6.png" width="100%" /&gt;
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+&lt;img src="images/SingleFile7.png" width="100%" /&gt;
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+&lt;img src="images/ProjectHistory.jpg" width="75%" height="75%" /&gt;
+
+]
+
+.footnote[
+*The Turing Way* project illustration by Scriberia (DOI: [10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.6560477). Used under a [CC-BY licence](https://creativecommons.org/licenses/by/4.0/).
+
+]
+
+---
+
+# Why is version control useful?
+
+- It's a great **data management** and **documentation** tool:
+  - you're always working with the latest version of a file,
+  - the saved history makes it easier to figure out what it is you did...
+  - ... and revert to a previous version if you need to
+  - if working on GitHub, you'll always have backups!
+
+---
+
+# What is git?
+
+.center[
+
+&lt;img src="images/Git-Logo-White.png" width="50%" height="50%" /&gt;
+
+]
+
+Git is one of the most widely used version control systems in the world.
+It is free and open source!
+
+If you have a Mac or Linux machine, it's probably already installed; if you're working on a Windows machine, you have to install it first.
+
+You use git by taking **snapshots** of your project at different points in time 📷
+
+---
+
+# Commits
+
+Git doesn't automatically save your work.
+That is, *you* choose when you want to take a snapshot of your work.
+
+We call taking a snapshot making a **commit** 💍
+
+When you commit your work, you:
+1. view how your work has changed since the previous commit and
+2. write a commit message that explains your motivation for the changes
+
+---
+ 
+# What is GitHub?
+
+.center[
+
+&lt;img src="images/GitHub-Mark-Light-120px-plus.png" width="25%" height="25%" /&gt;
+
+]
+
+Git only allows you to work **locally** on your computer.
+
+GitHub is a popular **website** for hosting and sharing projects you have been tracking with git.
+This allows other people to work on your project at the same time ✨
+
+---
+
+.center[
+
+&lt;img src="images/github-collaboration.png" width="90%" height="90%" /&gt;
+
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+# Interim summary
+
+- ☑️ Version control is the practice of keeping track of changes in files and it helps you document your work and collaborate
+- ☑️ Git is one of the most widely used version control systems
+- ☑️ GitHub is a website that hosts and helps you share projects tracked with git
+
+---
+
+class: inverse
+
+# Using GitHub: Sign up/log in
+
+&lt;!-- this slide is purely for reference after the session --&gt;
+
+.pull-left[
+
+1. Go to github.com
+2. If you don't have an account, click on Sign up
+3. Add your (work) email, create a password, and come up with a username
+  - the username is what people will see when you do things on GitHub so pick something sensible
+4. Click on Sign in and enter the email and password you used when you created your account
+
+]
+
+.pull-right[
+
+&lt;img src="images/github-signup.png" width="100%" /&gt;
+
+]
+
+---
+
+&lt;!-- this slide is purely for reference after the session --&gt;
+
+Looking at the ribbon at the top, you can use the searchbar if you know what you're looking for, click on the `+` to create a new [repository/organisation/etc.] or look for the little picture of you.
+
+&lt;img src="images/github-ribbon.png" width="100%" /&gt;
+
+Once you find your picture, click on it.
+That opens a dropdown menu you can use to navigate to various things you've created.
+Let's start by looking at the profile.
+
+&lt;img src="images/github-dropdown.png" width="100%" /&gt;
+
+---
+
+&lt;!-- this slide is purely for reference after the session --&gt;
+
+You can use your profile as a mini webpage ✨
+
+Using the tabs, you can also find all your repositories etc. there.
+
+&lt;img src="images/github-profile.png" width="100%" /&gt;
+
+---
+
+# Repositories
+
+&lt;!-- this slide is purely for reference after the session --&gt;
+
+**Repositories** are the workhorse of GitHub; a repository is where you store all the files you need for your project.
+
+Repositories can be **private**, such that only the people that have been invited as collaborators can see them, or **public** such that everyone can see them.
+
+Even if everyone can *see* your repository, that doesn't mean anyone can *contribute* to it!
+You are still in control of your public repositories and changes can only be made by people to whom you've given access or if you approve those changes.
+
+---
+
+The bright orange bubbles explain what some of the buttons etc. mean in the repository
+
+&lt;img src="images/annotated-repo.png" width="100%" /&gt;
+
+---
+
+# Organisations
+
+Organisations are **shared accounts** that you can use if you're collaborating with the same people on multiple projects.
+
+The great thing about organisations is that repositories are in the organisation account (i.e. they are all in the same place) and all members of an organisation can see them (i.e. you don't have to invite all the same people to a bunch of repositories).
+
+---
+
+You'll be pleased to know that AIM RSF also has a GitHub organisation 🎉
+
+&lt;img src="images/github-organisation.png" width="100%" /&gt;
+
+As you can see, there are 6 repositories, but only two of them are public.
+
+That means that people that aren't members of the organisation cannot see the content of the private repositories; this is super handy for sharing work with your collaborators so you can work on projects together but without outsiders being able to see what you're working on.
+
+---
+
+# Branches
+
+Up until now we've been assuming a linear workflow, something that looks like this:
+
+.center[
+&lt;img src="images/LinearDevelopment.png" width="75%" height="75%" /&gt;
+]
+
+A lot of the times, though, we want to make a change that doesn't affect this main timeline, or in git-speak, the **main branch**, but rather is developed in parallel. Two reasons:
+- **experimentation**: you can try things out without breaking whatever it is you are developing
+- **collaboration**: your collaborators can review your work while it's being developed and give you feedback
+
+---
+
+# Working with branches
+
+The workflow is as follows:
+1. Create a branch, giving it an informative name
+2. Work on whatever it is you are developing, committing regularly
+3. When you are happy with your work, submit a **pull request** explaining what it is you have done and ask for someone to review it
+4. Once the changes have been reviewed and accepted, **merge** into the main branch
+
+---
+
+&lt;img src="images/github-branch.png" width="90%" height="90%" /&gt;
+
+Above, you can see the branches of the `Getting Started` repository:
+- the black line is `main`
+- the first blue and green lines are branches that were merged in
+- the second blue and green lines are branches that are still being developed
+
+---
+
+class: inverse
+
+# Using GitHub: Making commits in branches
+
+1. Go to the file I just created
+2. Click on the pencil to edit
+3. Add your name
+4. Click on commit
+5. Add a commit message
+6. Select the option to commit in a new branch
+7. Give an informative name to your branch (e.g. your name)
+8. Click on the commit button
+9. Leave the messages as they are and submit the pull request
+10. Assign me (eirini-zormpa) as a reviewer
+
+---
+
+class: center middle
+
+# Congratulations! 🎉
+
+---
+
+# Summary
+
+- When you make a **commit** you save the changes you've made
+  - You should always write an informative **commit message**
+- A **repository** is basically a project, where all your files are saved
+- An **organisation** is a shared account that helps you work collaboratively with the same people
+- You create a **branch** to develop something independently from main
+- You submit a **pull request** when you've finished working on your changes
+  - If your pull request is approved, your changes will be **merged** into the main branch
+
+Git and GitHub have **a lot of weird terms** but you do get used to it!
+
+---
+
+background-image: url("images/LogoDetailWithText.jpg")
+background-position: right center
+background-size: 600px 691px
+
+# The Turing Way
+
+.pull-left[
+
+&gt;The Turing Way is a handbook to reproducible, ethical and collaborative data science.
+We involve and support a diverse community of contributors to make data science accessible, comprehensible and effective for everyone.
+
+]
+
+.footnote[
+*The Turing Way* project illustration by Scriberia (DOI: [10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.6560477).
+&lt;br&gt;
+Used under a [CC-BY licence](https://creativecommons.org/licenses/by/4.0/).
+
+]
+
+---
+
+# References
+
+.small[
+
+Mozilla Science Lab (2016). _Study Group Orientation_. URL:
+[https://mozillascience.github.io/study-group-orientation/index.html](https://mozillascience.github.io/study-group-orientation/index.html).
+
+The Turing Way Community (2021). _The Turing Way: A handbook for
+reproducible, ethical and collaborative research_. Version 1.0.1. DOI:
+[10.5281/zenodo.5671094](https://doi.org/10.5281%2Fzenodo.5671094).
+
+The Turing Way Community and Scriberia (2021). _Illustrations from the
+Turing Way book dashes_. DOI:
+[10.5281/zenodo.5706310](https://doi.org/10.5281%2Fzenodo.5706310).
+
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

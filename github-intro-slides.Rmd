@@ -1,0 +1,634 @@
+---
+title: "Version control with GitHub"
+subtitle: "A genle introduction for beginners"  
+author: 
+  - "Eirini Zormpa"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    seal: false
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+
+library(knitr)
+library(RefManageR)
+library(bibtex)
+library(emo)
+library(here)
+
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "alphabetic",
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE)
+bib <- ReadBib(here("bibliography.bib"), check = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo(
+  primary_color = "#1F4257",
+  secondary_color = "#f9c264",
+  text_bold_color = "#f9c264", 
+  code_inline_color = "#f9c264",
+  text_font_size = "1.3rem",
+  footnote_font_size = "0.7em",
+  footnote_position_bottom = "25px",
+  table_row_even_background_color = "#1F4257",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Lato", "300", "700", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+background-image: url("images/tim-mossholder-zs-pagqgenq-unsplash_1_0.jpg")
+background-position: center
+background-size: contain
+
+# `r kableExtra::text_spec("Version Control with GitHub: A gentle introduction for beginners", color = "white")`
+
+### `r kableExtra::text_spec("Eirini Zormpa", color = "white")`
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+Previous trainers: Kirstie Whitaker, Malvika Sharan, Yo Yehudi, Cassandra Gould van Praag, Esther Plomp, Sophia Batchelor
+
+
+---
+
+# Hi, I'm Eirini `r emo::ji("waving_hand_light_skin_tone")`
+
+- `r emo::ji("baby_light_skin_tone")` **BA in English Language and Literature** @Aristotle University of Thessaloniki
+- `r emo::ji("woman_student_light_skin_tone")` **MSc in Language Sciences**, Neuroscience stream @Reading University
+--
+
+- `r emo::ji("woman_scientist_light_skin_tone")` **PhD Candidate** @Max Planck Institute for Psycholinguistics
+  - started using programming with `R` and using `git` for version control (locally)
+--
+
+- `r emo::ji("woman_teacher_light_skin_tone")` **Trainer on Research Data Management and Open Science** @Delft University of Technology
+  - started using GitHub more frequently for sharing resources and contributing to projects
+--
+
+- `r emo::ji("woman_technologist_light_skin_tone")` **Community Manager Open Collaboration** in AIM RSF @The Alan Turing Institute
+  - using GitHub almost daily, mostly for collaboration
+
+---
+
+# What is version control?
+
+<!--
+Alternative definitions
+- [Software Carpentry](https://swcarpentry.github.io/git-novice/01-basics/index.html): Version control systems start with a base version of the document and then record changes you make each step of the way. You can think of it as a recording of your progress: you can rewind to start at the base document and play back each change you made, eventually arriving at your more recent version.
+
+- [Mozilla Science Lab](https://mozillascience.github.io/study-group-orientation/index.html): version control: the task of managing the many contributions your group makes to shared working documents
+-->
+
+.pull-left[
+
+```{r version-control-illustration, echo = FALSE}
+include_graphics(here("images", "VersionControl.jpg"))
+```
+
+]
+
+--
+
+.pull-right[
+
+### The Turing Way
+
+> Version control is an approach to **recording changes** in a file or set of files **over time** so that you and your collaborators can:
+
+>- track their history,
+>- review any changes, and
+>- go back to earlier versions.
+
+]
+
+.footnote[
+Image is a *The Turing Way* project illustration by Scriberia `r NoCite(bib, "the_turing_way_community_2021_5706310")` (DOI: [10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.6560477)).
+Quote from the [*The Turing Way: A handbook for reproducible, ethical and collaborative research (1.0.1)*](https://the-turing-way.netlify.app/reproducible-research/vcs.html) `r NoCite(bib, "the_turing_way_community_2021")` (The Turing Way Community, 2021; DOI: [10.5281/zenodo.6533831](https://doi.org/10.5281/zenodo.6533831)). Both used under a [CC-BY licence](https://creativecommons.org/licenses/by/4.0/).
+]
+
+---
+
+# Examples of version control systems
+
+.pull-left[
+
+### Versions in multiple files
+
+A straightforward way to version files is by adding versions or explanatory labels to the name:
+- v1. v2, v3 etc.
+- draft, commentsAB, etc.
+
+]
+
+---
+
+.center[
+
+```{r multiple-files-illustration-1, echo = FALSE}
+include_graphics(here("images", "MultipleFiles1.png"))
+```
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), `r NoCite(bib, "study_group_orientation_2016")` used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+```{r multiple-files-illustration-2, echo = FALSE}
+include_graphics(here("images", "MultipleFiles2.png"))
+```
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+```{r multiple-files-illustration-3, echo = FALSE}
+include_graphics(here("images", "MultipleFiles3.png"))
+```
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+```{r multiple-files-illustration-4, echo = FALSE}
+include_graphics(here("images", "MultipleFiles4.png"))
+```
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+# Examples of version control systems
+
+.pull-left[
+
+### Versions in multiple files
+
+A straightforward way to version files is by adding versions or explanatory labels to the name:
+- v1. v2, v3 etc.
+- draft, commentsAB, etc.
+
+]
+
+.pull-right[
+
+### Versions in single file
+
+Some software record all the changes in a file, allowing you to explore its history:
+
+- Basic: Google Drive, Dropbox, Overleaf
+- Advanced: Subversion, git
+
+]
+
+---
+
+.center[
+
+```{r single-file-illustration-1, echo = FALSE}
+include_graphics(here("images", "SingleFile1.png"))
+```
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+```{r single-file-illustration-2, echo = FALSE}
+include_graphics(here("images", "SingleFile2.png"))
+```
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+```{r single-file-illustration-3, echo = FALSE}
+include_graphics(here("images", "SingleFile3.png"))
+```
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+```{r single-file-illustration-4, echo = FALSE}
+include_graphics(here("images", "SingleFile4.png"))
+```
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+```{r single-file-illustration-5, echo = FALSE}
+include_graphics(here("images", "SingleFile5.png"))
+```
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+```{r single-file-illustration-6, echo = FALSE}
+include_graphics(here("images", "SingleFile6.png"))
+```
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+```{r single-file-illustration-7, echo = FALSE}
+include_graphics(here("images", "SingleFile7.png"))
+```
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+.center[
+
+```{r project-history-illustration, echo = FALSE, out.height="75%", out.width="75%"}
+include_graphics(here("images", "ProjectHistory.jpg"))
+```
+
+]
+
+.footnote[
+*The Turing Way* project illustration by Scriberia (DOI: [10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.6560477). Used under a [CC-BY licence](https://creativecommons.org/licenses/by/4.0/).
+
+]
+
+---
+
+# Why is version control useful?
+
+- It's a great **data management** and **documentation** tool:
+  - you're always working with the latest version of a file,
+  - the saved history makes it easier to figure out what it is you did...
+  - ... and revert to a previous version if you need to
+  - if working on GitHub, you'll always have backups!
+
+---
+
+# What is git?
+
+.center[
+
+```{r git, echo = FALSE, out.height="50%", out.width="50%"}
+include_graphics(here("images", "Git-Logo-White.png"))
+```
+
+]
+
+Git is one of the most widely used version control systems in the world.
+It is free and open source!
+
+If you have a Mac or Linux machine, it's probably already installed; if you're working on a Windows machine, you have to install it first.
+
+You use git by taking **snapshots** of your project at different points in time `r emo::ji("camera")`
+
+---
+
+# Commits
+
+Git doesn't automatically save your work.
+That is, *you* choose when you want to take a snapshot of your work.
+
+We call taking a snapshot making a **commit** `r emo::ji("ring")`
+
+When you commit your work, you:
+1. view how your work has changed since the previous commit and
+2. write a commit message that explains your motivation for the changes
+
+---
+ 
+# What is GitHub?
+
+.center[
+
+```{r github, echo = FALSE, out.height="25%", out.width="25%"}
+include_graphics(here("images", "GitHub-Mark-Light-120px-plus.png"))
+```
+
+]
+
+Git only allows you to work **locally** on your computer.
+
+GitHub is a popular **website** for hosting and sharing projects you have been tracking with git.
+This allows other people to work on your project at the same time `r emo::ji("sparkles")`
+
+---
+
+.center[
+
+```{r github-collaboration, echo = FALSE, out.height="90%", out.width="90%"}
+include_graphics(here("images", "github-collaboration.png"))
+```
+
+]
+
+.footnote[
+[Image](https://mozillascience.github.io/study-group-orientation/3.1-collab-vers-github.html) from Chapter 3 of the [*Mozilla Science Lab's Study Group Orientation handbook*](https://mozillascience.github.io/study-group-orientation/index.html), used under a [Mozilla Public License Version 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+
+]
+
+---
+
+# Interim summary
+
+- `r emo::ji("ballot_box_with_check")` Version control is the practice of keeping track of changes in files and it helps you document your work and collaborate
+- `r emo::ji("ballot_box_with_check")` Git is one of the most widely used version control systems
+- `r emo::ji("ballot_box_with_check")` GitHub is a website that hosts and helps you share projects tracked with git
+
+---
+
+class: inverse
+
+# Using GitHub: Sign up/log in
+
+<!-- this slide is purely for reference after the session -->
+
+.pull-left[
+
+1. Go to github.com
+2. If you don't have an account, click on Sign up
+3. Add your (work) email, create a password, and come up with a username
+  - the username is what people will see when you do things on GitHub so pick something sensible
+4. Click on Sign in and enter the email and password you used when you created your account
+
+]
+
+.pull-right[
+
+```{r github-signup, echo = FALSE}
+include_graphics(here("images", "github-signup.png"))
+```
+
+]
+
+---
+
+<!-- this slide is purely for reference after the session -->
+
+Looking at the ribbon at the top, you can use the searchbar if you know what you're looking for, click on the `+` to create a new [repository/organisation/etc.] or look for the little picture of you.
+
+```{r github-ribbon, echo = FALSE}
+include_graphics(here("images", "github-ribbon.png"))
+```
+
+Once you find your picture, click on it.
+That opens a dropdown menu you can use to navigate to various things you've created.
+Let's start by looking at the profile.
+
+```{r github-dropdown, echo = FALSE}
+include_graphics(here("images", "github-dropdown.png"))
+```
+
+---
+
+<!-- this slide is purely for reference after the session -->
+
+You can use your profile as a mini webpage `r emo::ji("sparkles")`
+
+Using the tabs, you can also find all your repositories etc. there.
+
+```{r github-profile, echo = FALSE}
+include_graphics(here("images", "github-profile.png"))
+```
+
+---
+
+# Repositories
+
+<!-- this slide is purely for reference after the session -->
+
+**Repositories** are the workhorse of GitHub; a repository is where you store all the files you need for your project.
+
+Repositories can be **private**, such that only the people that have been invited as collaborators can see them, or **public** such that everyone can see them.
+
+Even if everyone can *see* your repository, that doesn't mean anyone can *contribute* to it!
+You are still in control of your public repositories and changes can only be made by people to whom you've given access or if you approve those changes.
+
+---
+
+The bright orange bubbles explain what some of the buttons etc. mean in the repository
+
+```{r annotated-repo, echo = FALSE}
+include_graphics(here("images", "annotated-repo.png"))
+```
+
+---
+
+# Organisations
+
+Organisations are **shared accounts** that you can use if you're collaborating with the same people on multiple projects.
+
+The great thing about organisations is that repositories are in the organisation account (i.e. they are all in the same place) and all members of an organisation can see them (i.e. you don't have to invite all the same people to a bunch of repositories).
+
+---
+
+You'll be pleased to know that AIM RSF also has a GitHub organisation `r emo::ji("tada")`
+
+```{r github-organisation, echo = FALSE}
+include_graphics(here("images", "github-organisation.png"))
+```
+
+As you can see, there are 6 repositories, but only two of them are public.
+
+That means that people that aren't members of the organisation cannot see the content of the private repositories; this is super handy for sharing work with your collaborators so you can work on projects together but without outsiders being able to see what you're working on.
+
+---
+
+# Branches
+
+Up until now we've been assuming a linear workflow, something that looks like this:
+
+.center[
+```{r linear-development, echo = FALSE, out.width="75%", out.height="75%"}
+include_graphics(here("images", "LinearDevelopment.png"))
+```
+]
+
+A lot of the times, though, we want to make a change that doesn't affect this main timeline, or in git-speak, the **main branch**, but rather is developed in parallel. Two reasons:
+- **experimentation**: you can try things out without breaking whatever it is you are developing
+- **collaboration**: your collaborators can review your work while it's being developed and give you feedback
+
+---
+
+# Working with branches
+
+The workflow is as follows:
+1. Create a branch, giving it an informative name
+2. Work on whatever it is you are developing, committing regularly
+3. When you are happy with your work, submit a **pull request** explaining what it is you have done and ask for someone to review it
+4. Once the changes have been reviewed and accepted, **merge** into the main branch
+
+---
+
+```{r github-branch, echo = FALSE, out.width="90%", out.height="90%"}
+include_graphics(here("images", "github-branch.png"))
+```
+
+Above, you can see the branches of the `Getting Started` repository:
+- the black line is `main`
+- the first blue and green lines are branches that were merged in
+- the second blue and green lines are branches that are still being developed
+
+---
+
+class: inverse
+
+# Using GitHub: Making commits in branches
+
+1. Go to the file I just created
+2. Click on the pencil to edit
+3. Add your name
+4. Click on commit
+5. Add a commit message
+6. Select the option to commit in a new branch
+7. Give an informative name to your branch (e.g. your name)
+8. Click on the commit button
+9. Leave the messages as they are and submit the pull request
+10. Assign me (eirini-zormpa) as a reviewer
+
+---
+
+class: center middle
+
+# Congratulations! `r emo::ji("tada")`
+
+---
+
+# Summary
+
+- When you make a **commit** you save the changes you've made
+  - You should always write an informative **commit message**
+- A **repository** is basically a project, where all your files are saved
+- An **organisation** is a shared account that helps you work collaboratively with the same people
+- You create a **branch** to develop something independently from main
+- You submit a **pull request** when you've finished working on your changes
+  - If your pull request is approved, your changes will be **merged** into the main branch
+
+Git and GitHub have **a lot of weird terms** but you do get used to it!
+
+---
+
+background-image: url("images/LogoDetailWithText.jpg")
+background-position: right center
+background-size: 600px 691px
+
+# The Turing Way
+
+.pull-left[
+
+>The Turing Way is a handbook to reproducible, ethical and collaborative data science.
+We involve and support a diverse community of contributors to make data science accessible, comprehensible and effective for everyone.
+
+]
+
+.footnote[
+*The Turing Way* project illustration by Scriberia (DOI: [10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.6560477).
+<br>
+Used under a [CC-BY licence](https://creativecommons.org/licenses/by/4.0/).
+
+]
+
+---
+
+# References
+
+.small[
+
+```{r references-1, results='asis', echo=FALSE}
+PrintBibliography(bib)
+```
+
+]
