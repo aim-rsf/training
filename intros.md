@@ -1,1 +1,3 @@
 ## Introductions
+
+* Sophia Batchelor :star:
