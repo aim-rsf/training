@@ -147,7 +147,7 @@ Quote from the [*The Turing Way: A handbook for reproducible, ethical and collab
 ### Versions in multiple files
 
 A straightforward way to version files is by adding versions or explanatory labels to the name:
-- v1. v2, v3 etc.
+- v1, v2, v3 etc.
 - draft, commentsAB, etc.
 
 ]
