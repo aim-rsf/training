@@ -66,21 +66,17 @@ background-size: contain
 
 # `r kableExtra::text_spec("Version Control with GitHub: A gentle introduction for beginners", color = "white")`
 
+# `r kableExtra::text_spec("AIM RSF Early Career Researcher lunchtime session", color = "white")`
+
 ### `r kableExtra::text_spec("Eirini Zormpa", color = "white")`
 
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 
 Previous trainers: Kirstie Whitaker, Malvika Sharan, Yo Yehudi, Cassandra Gould van Praag, Esther Plomp, Sophia Batchelor
 
-
+Image credit: Tim Mossholer from [Unsplash](https://unsplash.com/@timmossholder)
 ---
 
 # Hi, I'm Eirini `r emo::ji("waving_hand_light_skin_tone")`
