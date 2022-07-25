@@ -1,5 +1,7 @@
 # About
 
+[![DOI](https://zenodo.org/badge/513281712.svg)](https://zenodo.org/badge/latestdoi/513281712)
+
 This repository contains the slides used for the [AIM RSF](https://www.turing.ac.uk/research/research-projects/ai-multiple-long-term-conditions-research-support-facility) Early Career Researcher lunchtime session on 21 July 2022, entitled *Version Control with GitHub: A gentle introduction for beginners*.
 
 This presentation is heavily based on the following materials:
