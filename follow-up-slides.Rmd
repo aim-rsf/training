@@ -1,0 +1,247 @@
+---
+title: "Version control with GitHub"
+subtitle: "A genle introduction for beginners follow-up"  
+author: 
+  - "Eirini Zormpa"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    seal: false
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+
+library(knitr)
+library(RefManageR)
+library(bibtex)
+library(emo)
+library(here)
+
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "alphabetic",
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE)
+bib <- ReadBib(here("bibliography.bib"), check = FALSE)
+```
+
+background-image: url("images/tim-mossholder-zs-pagqgenq-unsplash_1_0.jpg")
+background-position: center
+background-size: contain
+
+# `r kableExtra::text_spec("Version Control with GitHub: A gentle introduction for beginners (follow-up)", color = "white")`
+
+
+### `r kableExtra::text_spec("Eirini Zormpa", color = "white")`
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+Image credit: Tim Mossholder from [Unsplash](https://unsplash.com/@timmossholder)
+
+---
+
+# Recap: Version control
+
+.center[
+```{r verions-control, echo = FALSE, out.width="85%", out.height="85%"}
+include_graphics(here("images", "LinearDevelopment.png"))
+```
+]
+
+Version control is the practice of keeping track of changes in files and it helps you document your work and collaborate. Version control allows you to save the timeline of a file and move to past versions.
+
+---
+
+class: middle
+
+# Recap: Git and GitHub
+
+.pull-left[
+
+```{r git, echo = FALSE, out.height="90%", out.width="90%"}
+include_graphics(here("images", "Git-Logo-White.png"))
+```
+
+- Git is one of the most widely used version control systems
+- You can use it locally on your machine through the command line or a GUI
+- Git takes snapshots of your projects at various timepoints, called commits
+]
+
+
+.pull-right[
+
+.center[
+
+```{r github, echo = FALSE, out.height="40%", out.width="40%"}
+include_graphics(here("images", "GitHub-Mark-Light-120px-plus.png"))
+```
+]
+
+- GitHub is a website that hosts and helps you share projects tracked with git
+- It can also be used for project management, though we won't cover that today
+
+]
+
+---
+
+# Branches
+
+Up until now we've been assuming a linear workflow, something like this:
+
+.center[
+```{r linear-development, echo = FALSE, out.width="75%", out.height="75%"}
+include_graphics(here("images", "LinearDevelopment.png"))
+```
+]
+
+A lot of the time we need a temporary space to work on features in parallel, without affecting the main timeline, but is developed in parallel. Two reasons:
+- **experimentation**: you can try things out without breaking whatever it is you are developing
+- **collaboration**: others can review your work while it's developed and give you feedback
+
+A branch points to a specific commit in your repository.
+
+---
+
+# Pull requests
+
+After finishing working on a feature, you'll want to incorporate it back into the main branch.
+
+You do this by submitting a **pull request**, in which you explain what the proposed changes are and what they do.
+
+You should then ask for a **reviewer** who will evaluate your proposed changes.
+
+---
+
+# Merge
+
+The reviewer will look at the proposed changes and either accept them as they are or ask for changes. After the pull request has been accepted, it can be **merged**, i.e., the changes can be incorporated into the main branch.
+
+You should generally not accept your own pull requests.
+
+---
+
+```{r github-branch, echo = FALSE, out.width="90%", out.height="90%"}
+include_graphics(here("images", "github-branch.png"))
+```
+
+Above, you can see the branches of the `Getting Started` repository:
+- the black line is `main`
+- the first blue and green lines are branches that were merged in
+- the second blue and green lines are branches that are still being developed
+
+---
+
+# Working with branches
+
+The workflow is as follows:
+1. Create a branch, giving it an informative name
+2. Work on whatever it is you are developing, committing regularly
+3. When you are happy with your work, submit a **pull request** explaining what it is you have done and ask for someone to review it
+4. Once the changes have been reviewed and accepted, **merge** into the main branch
+
+---
+
+class: inverse
+
+# Using GitHub: Making commits in branches
+
+1. Go to the file I just created
+2. Click on the pencil to edit
+3. Add your name
+4. Click on commit
+5. Add a commit message
+6. Select the option to commit in a new branch
+7. Give an informative name to your branch (e.g. your name)
+8. Click on the commit button
+9. Leave the messages as they are and submit the pull request
+10. Assign me (eirini-zormpa) as a reviewer
+
+---
+
+class: center middle
+
+# Congratulations! `r emo::ji("tada")`
+
+---
+
+# Summary
+
+- You create a **branch** to develop something independently from main
+- You submit a **pull request** when you've finished working on your changes
+  - If your pull request is approved, your changes will be **merged** into the main branch
+
+Git and GitHub have **a lot of weird terms** but you do get used to it!
+
+---
+
+background-image: url("images/LogoDetailWithText.jpg")
+background-position: right center
+background-size: 600px 691px
+
+# The Turing Way
+
+.pull-left[
+
+>The Turing Way is a handbook to reproducible, ethical and collaborative data science.
+We involve and support a diverse community of contributors to make data science accessible, comprehensible and effective for everyone.
+
+]
+
+.footnote[
+*The Turing Way* project illustration by Scriberia `r NoCite(bib, "the_turing_way_community_2021_5706310")` `r NoCite(bib, "the_turing_way_community_2021")` (DOI: [10.5281/zenodo.3332807](https://doi.org/10.5281/zenodo.6560477).
+<br>
+Used under a [CC-BY licence](https://creativecommons.org/licenses/by/4.0/).
+
+]
+
+---
+
+class: inverse
+
+# Optional exercise: create a README about yourself!
+
+1. Create a new repository by clicking the "+" on the banner and selecting "New repository"
+2. Give a name to your repository that is EXACTLY THE SAME as your GitHub username (in my case eirini-zormpa)
+3. Make sure the repository is public
+4. Initialise it with a README
+5. Click on "Create repository"
+6. Edit the README template that you see according to your background and interests
+7. Commit your changes
+
+---
+
+# References
+
+.small[
+
+```{r references-1, results='asis', echo=FALSE}
+PrintBibliography(bib)
+```
+
+]
