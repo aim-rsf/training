@@ -66,10 +66,22 @@ Image credit: Tim Mossholder from [Unsplash](https://unsplash.com/@timmossholder
 
 ---
 
+# Today's session
+
+- Short recap of last session (**version control**, **git**, **GitHub**, **repositories**, **commits**, **organisations**)
+- Working collaboratively on **branches**, **creating pull requests** and **merging**
+- Practise the collaborative workflow with exercises
+- Using **issues** to suggest changes
+- Practise fixing issues using the collaborative workflow
+- Resources
+- End/ Optional additional practice
+
+---
+
 # Recap: Version control
 
 .center[
-```{r verions-control, echo = FALSE, out.width="85%", out.height="85%"}
+```{r verions-control, echo = FALSE}
 include_graphics(here("images", "LinearDevelopment.png"))
 ```
 ]
@@ -128,6 +140,17 @@ A branch points to a specific commit in your repository.
 
 ---
 
+```{r github-branch, echo = FALSE, out.width="90%", out.height="90%"}
+include_graphics(here("images", "github-branch.png"))
+```
+
+Above, you can see the branches of the `Getting Started` repository:
+- the black line is `main`
+- the first blue and green lines are branches that were merged in
+- the second blue and green lines are branches that are still being developed
+
+---
+
 # Pull requests
 
 After finishing working on a feature, you'll want to incorporate it back into the main branch.
@@ -146,32 +169,27 @@ You should generally not accept your own pull requests.
 
 ---
 
-```{r github-branch, echo = FALSE, out.width="90%", out.height="90%"}
-include_graphics(here("images", "github-branch.png"))
-```
+# Branches and forks
 
-Above, you can see the branches of the `Getting Started` repository:
-- the black line is `main`
-- the first blue and green lines are branches that were merged in
-- the second blue and green lines are branches that are still being developed
+You can only create branches in repositories where you have been invited as a collaborator and been given **write access**.
+
+If you want to contribute to a repository in which you are not a collaborator, you cannot create a branch; you must create a **fork**. When you fork a repository, you create a copy of that repository within your personal account.
 
 ---
 
-# Working with branches
+# Working with branches (or forks)
 
 The workflow is as follows:
-1. Create a branch, giving it an informative name
+1. If you are a collaborator in the repository, create a branch, giving it an informative name. If you are not a collaborator in the repository, fork it into your account.
 2. Work on whatever it is you are developing, committing regularly
 3. When you are happy with your work, submit a **pull request** explaining what it is you have done and ask for someone to review it
 4. Once the changes have been reviewed and accepted, **merge** into the main branch
 
 ---
 
-class: inverse
-
 # Using GitHub: Making commits in branches
 
-1. Go to the file I just created
+1. Go to the .white[[intros.md](https://github.com/aim-rsf/github-intro/blob/main/intros.md)] in the github-intro repository
 2. Click on the pencil to edit
 3. Add your name
 4. Click on commit
@@ -180,7 +198,7 @@ class: inverse
 7. Give an informative name to your branch (e.g. your name)
 8. Click on the commit button
 9. Leave the messages as they are and submit the pull request
-10. Assign me (eirini-zormpa) as a reviewer
+10. Assign me (@eirini-zormpa) or Sophia (@BrainonSilicon) as a reviewer
 
 ---
 
@@ -190,11 +208,39 @@ class: center middle
 
 ---
 
+# Issues
+
+**Issues** are like posts on a repository. You can use them to flag things that should be changed: that can be bugs or errors that need to be fixed or new features that could be added to the repository to enhance it.
+
+Issues have a title and a text box where you can add more details. Make your issues as detailed as you can, explaining what you think should happen and how it would improve the project.
+
+If you want to contribute to a repository, checking the issues is a great way to get started! That way you can see what help is needed and you maximise the chances of your pull requests being merged!
+
+---
+
+# Issues vs. pull requests
+
+- You use issues to propose new ideas for changes and discuss those ideas with other people working on the project. You do this before actually making any changes.
+- You submit a pull request to propose the implementation of the changes that were discussed in the issue.
+
+---
+
+# Using GitHub: Working on issues
+
+1. Navigate to the [Getting started repository](https://github.com/aim-rsf/Getting-Started) of the AIM RSF organisation
+2. Comment on the issue about consortia blurbs, saying how you can contribute
+3. Create a branch with the name of your consortium (by clicking on the button that says `main`)
+4. Edit the consortium-intro.md file with information on what you're working on within your project
+
+---
+
 # Summary
 
-- You create a **branch** to develop something independently from main
+- You create a **branch** to develop something independently from main, if you are a collaborator in the repository
+- You create a **fork** if you are not a collaborator in the repository.
 - You submit a **pull request** when you've finished working on your changes
-  - If your pull request is approved, your changes will be **merged** into the main branch
+- If your pull request is approved, your changes will be **merged** into the main branch
+- You can use **issues** to flag bugs and errors or new features that the project would benefit from
 
 Git and GitHub have **a lot of weird terms** but you do get used to it!
 
