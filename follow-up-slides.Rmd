@@ -1,6 +1,6 @@
 ---
 title: "Version control with GitHub"
-subtitle: "A genle introduction for beginners follow-up"  
+subtitle: "A gentle introduction for beginners follow-up"  
 author: 
   - "Eirini Zormpa"
 date: '`r Sys.Date()`'
@@ -198,7 +198,7 @@ The workflow is as follows:
 7. Give an informative name to your branch (e.g. your name)
 8. Click on the commit button
 9. Leave the messages as they are and submit the pull request
-10. Assign me (@eirini-zormpa) or Sophia (@BrainonSilicon) as a reviewer
+10. Assign me (@eirini-zormpa) as a reviewer
 
 ---
 
