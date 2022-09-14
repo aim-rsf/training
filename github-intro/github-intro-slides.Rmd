@@ -1,6 +1,6 @@
 ---
 title: "Version control with GitHub"
-subtitle: "A genle introduction for beginners"  
+subtitle: "A gentle introduction for beginners"  
 author: 
   - "Eirini Zormpa"
 date: '`r Sys.Date()`'
