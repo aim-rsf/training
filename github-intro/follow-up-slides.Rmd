@@ -189,7 +189,7 @@ The workflow is as follows:
 
 # Using GitHub: Making commits in branches
 
-1. Go to the .white[[intros.md](https://github.com/aim-rsf/github-intro/blob/main/intros.md)] in the github-intro repository
+1. Go to the .white[[intros.md](https://github.com/aim-rsf/training/blob/main/github-intro/intros.md)] in the github-intro repository
 2. Click on the pencil to edit
 3. Add your name
 4. Click on commit
