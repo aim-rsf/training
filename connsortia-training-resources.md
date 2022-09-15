@@ -5,7 +5,7 @@ These can be workshops and courses offered by the institutions with which they a
 This list does not intend to be comprehensive; rather it should point to relevant courses that, ideally, the consortia members have participated in and benefited from.
 
 ## Open research and reproducibility
-- [The Turing Way Guide for Reproducible Research]([https://the-turing-way.netlify.app/welcome](https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html) is a lightly opinionated guide on making your research reproducible. It covers topics such as version control, testing, and computational environemnts. The Turing Way is free to use and reuse and is also a lovely community that welcomes new contributions ✨
+- [The Turing Way Guide for Reproducible Research](https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html) is a lightly opinionated guide on making your research reproducible. It covers topics such as version control, testing, and computational environemnts. The Turing Way is free to use and reuse and is also a lovely community that welcomes new contributions ✨
 
 
 ## Data science
