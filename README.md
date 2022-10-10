@@ -9,7 +9,8 @@ This repository holds information about the training delivered by the AIM RSF:
 | --------------- | ------------------------------------------------------- |------------------|
 | 18 October      | Introduction to GitHub for Collaboration                | Eirini Zormpa    |
 | 26 October      | GitHub for Project Management                           | Sophia Batchelor |
-| TBD             | Data Carpentry: Introduction to R                       | Eirini Zormpa    |
-| TBD             | Data Carpentry: Starting with Data in R                 | Eirini Zormpa    |
-| TBD             | Data Carpentry: Data Wrangling with `dplyr` and `tidyr` | Eirini Zormpa    |
-| TBD             | Data Carpentry: Data Visualisation with `ggplot2`       | Eirini Zormpa    |
+| 1 November      | Data Carpentry: Introduction to R                       | Eirini Zormpa    |
+| 8 November      | Data Carpentry: Starting with Data in R                 | Eirini Zormpa    |
+| 15 November     | Data Carpentry: Data Wrangling with `dplyr` and `tidyr` | Eirini Zormpa    |
+| 22 November     | Data Carpentry: Data Visualisation with `ggplot2`       | Eirini Zormpa    |
+| 13 December     | Data Carpentry: Literate programming with `R Markdown`  | Eirini Zormpa    |
