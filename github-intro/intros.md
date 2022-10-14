@@ -1,4 +1,8 @@
+# Introduction to GitHub training
+
 ## Introductions
+
+We use this file to practise collaborating with each other on GitHub :tada: Add your name to the list of awesome folk who have taken this workshop before so we can :sparkles: **collaborate** :sparkles:
 
 1. Sophia Batchelor :star:
 2. Eirini Zormpa :sparkles:
@@ -15,3 +19,18 @@
 13.
 14.
 15.
+16. 
+17. 
+18. 
+19. 
+20. 
+21. 
+22.
+23. 
+24. 
+25. 
+26. 
+27. 
+28. 
+29. 
+30. 
