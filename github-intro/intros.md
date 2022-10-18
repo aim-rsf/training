@@ -11,7 +11,7 @@ We use this file to practise collaborating with each other on GitHub :tada: Add 
 5. Rhiannon Owen :cherry_blossom:
 6. Seb Stannard 
 7. Rachael Stickland 🍂
-8.
+8. Meenu 🌻
 9. Rebecca
 10.
 11.
