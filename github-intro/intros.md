@@ -21,7 +21,7 @@ We use this file to practise collaborating with each other on GitHub :tada: Add 
 15.
 16. 
 17. 
-18. 
+18. Daniel Stow 🦒
 19. 
 20. 
 21. 
