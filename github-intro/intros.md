@@ -12,7 +12,7 @@ We use this file to practise collaborating with each other on GitHub :tada: Add 
 6. Seb Stannard 
 7.
 8.
-9.
+9. Rebecca
 10.
 11.
 12.
