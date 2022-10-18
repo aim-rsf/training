@@ -15,7 +15,7 @@ We use this file to practise collaborating with each other on GitHub :tada: Add 
 9. Rebecca
 10.
 11.
-12.
+12. Ellen Moss
 13.
 14.
 15.
