@@ -28,7 +28,7 @@ We use this file to practise collaborating with each other on GitHub :tada: Add 
 22.
 23. 
 24. 
-25. 
+25. Georgina Nakafero 
 26. 
 27. 
 28. 
