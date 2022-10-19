@@ -13,7 +13,7 @@ We use this file to practise collaborating with each other on GitHub :tada: Add 
 7. Rachael Stickland 🍂
 8. Meenu 🌻
 9. Rebecca
-10.
+10. Emilia Holland
 11.
 12. Ellen Moss
 13.
