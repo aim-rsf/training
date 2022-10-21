@@ -5,7 +5,7 @@
 We use this file to practise collaborating with each other on GitHub :tada: Add your name to the list of awesome folk who have taken this workshop before so we can :sparkles: **collaborate** :sparkles:
 
 1. Sophia Batchelor :star:
-2. Eirini Zormpa :goat:
+2. Eirini Zormpa :yarn:
 3. Ashley Akbari 🚀
 4. Roberta 
 5. Rhiannon Owen :cherry_blossom:
