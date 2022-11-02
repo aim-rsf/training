@@ -163,7 +163,7 @@ covid_data <- read_csv("data/covid_data.csv")
 
 --
 
-Option 1 is more reproducible, as it allows you to move your project around on your computer and share it with others without having to directly modify file paths in the individual scripts.
+Option 2 is more reproducible, as it allows you to move your project around on your computer and share it with others without having to directly modify file paths in the individual scripts.
 
 ---
 

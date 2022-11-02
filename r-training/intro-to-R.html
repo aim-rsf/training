@@ -29,7 +29,7 @@ class: center, middle, inverse, title-slide
 ### Eirini Zormpa
 ]
 .date[
-### 1 November 2022 (last updated 2022-10-31)
+### 1 November 2022 (last updated 2022-11-02)
 ]
 
 ---
@@ -143,7 +143,7 @@ covid_data &lt;- read_csv("data/covid_data.csv")
 
 --
 
-Option 1 is more reproducible, as it allows you to move your project around on your computer and share it with others without having to directly modify file paths in the individual scripts.
+Option 2 is more reproducible, as it allows you to move your project around on your computer and share it with others without having to directly modify file paths in the individual scripts.
 
 ---
 
@@ -158,8 +158,8 @@ This makes sharing and documenting your projects much easier.
 
 --
 
-<div id="htmlwidget-b9c6aa15129b46e04490" style="width:100%;height:252px;" class="nomnoml html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b9c6aa15129b46e04490">{"x":{"code":"\n#fill: #FEFEFF\n#lineWidth: 1\n#zoom: 4\n#direction: right\n\n#stroke: black\n#direction: down\n\n[working-directory]-[data_raw/]\n[working-directory]-[data_clean/]\n[working-directory]-[figures/]\n[working-directory]-[LICENCE.md]\n[working-directory]-[paper.Rmd]\n[working-directory]-[README.md]\n[working-directory]-[scripts/]","svg":false,"png":null},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d2ffc830ec8f7c8ecef0" style="width:100%;height:252px;" class="nomnoml html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d2ffc830ec8f7c8ecef0">{"x":{"code":"\n#fill: #FEFEFF\n#lineWidth: 1\n#zoom: 4\n#direction: right\n\n#stroke: black\n#direction: down\n\n[working-directory]-[data_raw/]\n[working-directory]-[data_clean/]\n[working-directory]-[figures/]\n[working-directory]-[LICENCE.md]\n[working-directory]-[paper.Rmd]\n[working-directory]-[README.md]\n[working-directory]-[scripts/]","svg":false,"png":null},"evals":[],"jsHooks":[]}</script>
 
 ---
 class: inverse
@@ -231,11 +231,11 @@ class: center, middle, inverse
 
 # Exercise 1
 
-🕥 **3 mins**
+🕤 **3 mins**
 
 Find out the current content of the object `weight_lb`.
 
-<div class="countdown" id="timer_8d95a3b9" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_fe88ab31" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -251,12 +251,12 @@ class: center, middle, inverse
 
 # Exercise 2
 
-🕣 **5 mins**
+⏰ **5 mins**
 
 Create two variables `weight` and `height` and assign them values.
 Then create a third variable `bmi` and give it a value using the `weight` and `height` variables.
 
-<div class="countdown" id="timer_144c9622" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_75280aa1" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -357,7 +357,7 @@ class: center, middle, inverse
 
 # Exercise 3
 
-🕛 **10 mins**
+🕕 **10 mins**
 
 What will happen in each of these examples?
 
@@ -369,7 +369,7 @@ char_logical &lt;- c("a", "b", "c", TRUE)
 tricky &lt;- c(1, 2, 3, "4")
 ```
 
-<div class="countdown" id="timer_53a8367d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_460b9e5c" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -387,7 +387,7 @@ class: center, middle, inverse
 
 # Exercise 4
 
-🕚 **10 mins**
+🕥 **10 mins**
 
 
 
@@ -398,7 +398,7 @@ covid_cases &lt;- c(NA, 1, 0, 0, 3, NA, 3, 3, 61, 411, 2570, 7208)
 1. Using the above vector, create a new vector with the NAs removed.
 2. For how many weeks did were the COVID cases below 10?
 
-<div class="countdown" id="timer_f2b79dc9" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_a3fc7204" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -424,7 +424,7 @@ class: center, middle, inverse
 
 # Optional exercise
 
-⏰ **5 mins**
+🕞 **5 mins**
 
 How many values in combined_logical are `TRUE` in the following example? What type is the `TRUE` value?
 
@@ -435,7 +435,7 @@ char_logical &lt;- c("a", "b", "c", TRUE)
 combined_logical &lt;- c(num_logical, char_logical)
 ```
 
-<div class="countdown" id="timer_dda0ebde" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_47e3489e" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
