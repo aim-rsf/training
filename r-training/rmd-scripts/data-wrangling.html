@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>AIM RSF R series: Data wrangling with dplyr and tidyr</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Eirini Zormpa" />
+    <script src="data-wrangling_files/header-attrs/header-attrs.js"></script>
+    <link href="data-wrangling_files/countdown/countdown.css" rel="stylesheet" />
+    <script src="data-wrangling_files/countdown/countdown.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# AIM RSF R series: Data wrangling with <code>dplyr</code> and <code>tidyr</code>
+]
+.subtitle[
+## Based on Data Carpentry: R for Social Scientists
+]
+.author[
+### Eirini Zormpa
+]
+.date[
+### 15 November 2022 (last updated 2022-11-14)
+]
+
+---
+
+
+
+
+# Summary of session 2: Starting with data in R
+
+- ✅ Understand what tidy data are and why it's a useful format.
+- ✅ Read data into R.
+- ✅ Understand and manipulate `data frames`.
+- ✅ Understand and manipulate `factors`.
+
+---
+
+# Learning objectives: Data wrangling with `dplyr` and `tidyr`
+
+- ✅ Subset columns or rows with `select` or `filter` and create new columns with `mutate`.
+- ✅ Link the output of one function to the input of another function with the ‘pipe’ operator `%&gt;%`.
+- ✅ Combine datasets using `join`.
+- ✅ Reshape a dataframe from long to wide format and back with the `pivot_wider` and `pivot_longer` commands.
+- ✅ Export a dataframe to a .csv and .tsv file.
+
+---
+class: center, middle, inverse
+
+# Exercise 1
+
+🕙 **5 mins**
+
+Subset the `covid_data` tibble such that you keep only observations from the TESSy COVID-19 `source` and retain only the variables `country`, `indicator`, `year_week` and `weekly_count`.
+
+
+<div class="countdown" id="timer_dcd4e10d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+class: center, middle, inverse
+
+# Exercise 1 solution
+
+
+```r
+covid_data %&gt;% 
+  filter(source == "TESSy COVID-19") %&gt;% 
+  select(country, indicator, year_week, weekly_count)
+```
+
+--
+
+Note that if you `select` before you `filter`, your code won't run.
+That's because you're not retaining the variable that you use in your filtering.
+When piping, **order matters**!
+
+---
+class: center, middle, inverse
+
+# Exercise 2
+
+🕞 **10 mins**
+
+Create a new tibble `deaths_2021` that contains the total deaths for each country in 2021, arranged such that the country with the most deaths is at the top.
+
+
+<div class="countdown" id="timer_44074034" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+class: center, middle, inverse
+
+# Exercise 2 solution
+
+
+```r
+deaths_2021 &lt;- covid_data_dates %&gt;% 
+  drop_na(weekly_count) %&gt;% 
+  mutate(year = year(from_date)) %&gt;% 
+  filter(year == 2021,
+         indicator == "deaths") %&gt;% 
+  group_by(country) %&gt;% 
+  summarise(yearly_deaths = sum(weekly_count)) %&gt;% 
+  arrange(desc(yearly_deaths))
+```
+
+---
+
+# Summary of packages we used today
+
+- ✅ `readr` to read data into R and export it
+- ✅ `dplyr` for a grammar of data manipulation
+- ✅ `tidyr` to get data where variables are columns, observations are rows, and cells contain single values
+- ✅ `magrittr` to get access to the `tidyverse` pipe `%&gt;%`
+- ✅ `stringr` to manipulate strings/characters
+- ✅ `lubridate` to manipulate dates
+
+---
+class: center, middle
+
+# Thank you for your attention ✨ 🙏
+
+## See you next week for data visualisation with `ggplot2` 🎨
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
