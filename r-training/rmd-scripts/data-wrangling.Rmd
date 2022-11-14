@@ -1,5 +1,5 @@
 ---
-title: "AIM RSF R series: Data wrangling with `dplyr` and `tidyr`"
+title: "AIM RSF R series: Data wrangling with dplyr and tidyr"
 subtitle: "Based on Data Carpentry: R for Social Scientists"  
 author: 
   - "Eirini Zormpa"

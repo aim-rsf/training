@@ -14,7 +14,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# AIM RSF R series: Data wrangling with <code>dplyr</code> and <code>tidyr</code>
+# AIM RSF R series: Data wrangling with dplyr and tidyr
 ]
 .subtitle[
 ## Based on Data Carpentry: R for Social Scientists
@@ -45,7 +45,7 @@ class: center, middle, inverse, title-slide
 - ✅ Subset columns or rows with `select` or `filter` and create new columns with `mutate`.
 - ✅ Link the output of one function to the input of another function with the ‘pipe’ operator `%&gt;%`.
 - ✅ Combine datasets using `join`.
-- ✅ Reshape a dataframe from long to wide format and back with the `pivot_wider` and `pivot_longer` commands.
+- ✅ Reshape a dataframe from long to wide format with the `pivot_wider` function.
 - ✅ Export a dataframe to a .csv and .tsv file.
 
 ---
@@ -53,12 +53,12 @@ class: center, middle, inverse
 
 # Exercise 1
 
-🕙 **5 mins**
+🕟 **5 mins**
 
 Subset the `covid_data` tibble such that you keep only observations from the TESSy COVID-19 `source` and retain only the variables `country`, `indicator`, `year_week` and `weekly_count`.
 
 
-<div class="countdown" id="timer_dcd4e10d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_bc518a51" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -86,12 +86,12 @@ class: center, middle, inverse
 
 # Exercise 2
 
-🕞 **10 mins**
+🕣 **10 mins**
 
 Create a new tibble `deaths_2021` that contains the total deaths for each country in 2021, arranged such that the country with the most deaths is at the top.
 
 
-<div class="countdown" id="timer_44074034" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_1898eb89" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
