@@ -1,0 +1,147 @@
+---
+title: "AIM RSF R series: Data wrangling with dplyr and tidyr"
+subtitle: "Based on Data Carpentry: R for Social Scientists"  
+author: 
+  - "Eirini Zormpa"
+date: "15 November 2022 (last updated `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+
+
+library(knitr)
+
+library(RefManageR)
+library(bibtex)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "alphabetic",
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE)
+bib <- ReadBib("bibliography.bib", check = FALSE)
+
+library(readr)
+library(here)
+library(magrittr)
+library(dplyr)
+library(tidyr)
+library(lubridate)
+
+covid_data <- read_csv(here("data", "covid_data.csv"))
+covid_dates <- read_tsv(here("data", "dates.tsv"))
+
+covid_data_dates <- full_join(covid_data, covid_dates, by = "year_week")
+                        
+```
+
+# Summary of session 2: Starting with data in R
+
+- `r emo::ji("white_check_mark")` Understand what tidy data are and why it's a useful format.
+- `r emo::ji("white_check_mark")` Read data into R.
+- `r emo::ji("white_check_mark")` Understand and manipulate `data frames`.
+- `r emo::ji("white_check_mark")` Understand and manipulate `factors`.
+
+---
+
+# Learning objectives: Data wrangling with `dplyr` and `tidyr`
+
+- `r emo::ji("white_check_mark")` Subset columns or rows with `select` or `filter` and create new columns with `mutate`.
+- `r emo::ji("white_check_mark")` Link the output of one function to the input of another function with the ‘pipe’ operator `%>%`.
+- `r emo::ji("white_check_mark")` Combine datasets using `join`.
+- `r emo::ji("white_check_mark")` Reshape a dataframe from long to wide format with the `pivot_wider` function.
+- `r emo::ji("white_check_mark")` Export a dataframe to a .csv and .tsv file.
+
+---
+class: center, middle, inverse
+
+# Exercise 1
+
+`r emo::ji("clock")` **5 mins**
+
+Subset the `covid_data` tibble such that you keep only observations from the TESSy COVID-19 `source` and retain only the variables `country`, `indicator`, `year_week` and `weekly_count`.
+
+
+`r countdown::countdown(minutes = 5, color_running_background  = "lightgreen", color_running_text = "black", color_finished_background = "red", color_finished_text =  "grey30")`
+
+---
+class: center, middle, inverse
+
+# Exercise 1 solution
+
+```{r, eval=FALSE}
+covid_data %>% 
+  filter(source == "TESSy COVID-19") %>% 
+  select(country, indicator, year_week, weekly_count)
+```
+
+--
+
+Note that if you `select` before you `filter`, your code won't run.
+That's because you're not retaining the variable that you use in your filtering.
+When piping, **order matters**!
+
+---
+class: center, middle, inverse
+
+# Exercise 2
+
+`r emo::ji("clock")` **10 mins**
+
+Create a new tibble `deaths_2021` that contains the total deaths for each country in 2021, arranged such that the country with the most deaths is at the top.
+
+
+`r countdown::countdown(minutes = 10, color_running_background  = "lightgreen", color_running_text = "black", color_finished_background = "red", color_finished_text =  "grey30")`
+
+---
+class: center, middle, inverse
+
+# Exercise 2 solution
+
+```{r}
+deaths_2021 <- covid_data_dates %>% 
+  drop_na(weekly_count) %>% 
+  mutate(year = year(from_date)) %>% 
+  filter(year == 2021,
+         indicator == "deaths") %>% 
+  group_by(country) %>% 
+  summarise(yearly_deaths = sum(weekly_count)) %>% 
+  arrange(desc(yearly_deaths))
+```
+
+---
+
+# Summary of packages we used today
+
+- `r emo::ji("white_check_mark")` `readr` to read data into R and export it
+- `r emo::ji("white_check_mark")` `dplyr` for a grammar of data manipulation
+- `r emo::ji("white_check_mark")` `tidyr` to get data where variables are columns, observations are rows, and cells contain single values
+- `r emo::ji("white_check_mark")` `magrittr` to get access to the `tidyverse` pipe `%>%`
+- `r emo::ji("white_check_mark")` `stringr` to manipulate strings/characters
+- `r emo::ji("white_check_mark")` `lubridate` to manipulate dates
+
+---
+class: center, middle
+
+# Thank you for your attention `r emo::ji("sparkles")` `r emo::ji("pray")`
+
+## See you next week for data visualisation with `ggplot2` `r emo::ji("artist_palette")`
