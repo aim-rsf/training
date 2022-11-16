@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>AIM RSF R series: Introduction to R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Eirini Zormpa" />
+    <script src="intro-to-R_files/header-attrs/header-attrs.js"></script>
+    <script src="intro-to-R_files/htmlwidgets/htmlwidgets.js"></script>
+    <script src="intro-to-R_files/es6shim/es6shim.js"></script>
+    <script src="intro-to-R_files/es7shim/es7shim.js"></script>
+    <script src="intro-to-R_files/graphre/graphre.js"></script>
+    <script src="intro-to-R_files/nomnoml/nomnoml.js"></script>
+    <script src="intro-to-R_files/nomnoml-binding/nomnoml.js"></script>
+    <link href="intro-to-R_files/countdown/countdown.css" rel="stylesheet" />
+    <script src="intro-to-R_files/countdown/countdown.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# AIM RSF R series: Introduction to R
+]
+.subtitle[
+## Based on Data Carpentry: R for Social Scientists
+]
+.author[
+### Eirini Zormpa
+]
+.date[
+### 1 November 2022 (last updated 2022-11-02)
+]
+
+---
+
+
+
+
+
+
+
+# Hi, I'm Eirini 👋🏻
+
+- 👶🏻 **BA in English Language and Literature** @Aristotle University of Thessaloniki
+- 👩🏻‍🎓 **MSc in Language Sciences** @Reading University
+--
+
+- 👩🏻‍🔬 **PhD Candidate** @Max Planck Institute for Psycholinguistics
+  - learned how to work with data in `R` and fell in love 💖
+  - developed reproducible worksflows in `R` for myself
+  - co-founded an RLadies chapter
+--
+
+- 👩🏻‍🏫 **Trainer on Research Data Management and Open Science** @Delft University of Technology
+  - teaching intros to `R` as a Data Carpentry instructor
+--
+
+- 👩🏻‍💻 **Community Manager Open Collaboration** in AIM RSF @The Alan Turing Institute
+  - ❓
+
+
+---
+
+# Why R?
+
+--
+
+`R` is a programming language and the software used to interpret the scripts written with it. 
+--
+It is **free** and **open source**. ❌ 💰 = 🎉
+
+--
+
+It is great for:
+
+--
+
+- **reproducibility**: `R` is not point-and-click, so when repeating an analysis, you don't have to remember what buttons you pressed when. It's all written down for you in a script!
+
+--
+
+- **working with data**: `R` was created by statisticians for statistics. It has useful features for data analysis (e.g. working with missing data) and allows you to make beautiful graphics.
+
+--
+
+- **working in any discipline**: `R` is open source, meaning anyone can contribute code to extend its functionality (currently in 10,000+ packages). There are also communities supporting the use of R (e.g. NHS R community)
+
+---
+
+# Why RStudio?
+
+.footnote[
+*RStudio* used to also be the name of the company that develops RStudio but they are currently rebranding as *Posit*.
+]
+
+**RStudio** is an Integrated Development Environment (IDE) that has a **free and  open-source version** 💸. 
+--
+It makes it much easier to interact with `R` and even extends it.
+
+--
+
+- RStudio makes it easier to develop code by allowing us to navigate computer files, inspect the variables we create, and visualise the plots we generate.
+We will use R entirely through RStudio.
+
+--
+
+- RStudio supports reproducibility through features like `projects`.
+
+--
+
+- RStudio provides a Graphical User Interface to work with `git`.
+If that's something you'd like to learn about, we can have an additional session to work on it.
+
+---
+
+# Learning objectives
+
+- ✅ Navigate the RStudio Graphical User Interface (GUI).
+- ✅ Install `packages` to access additional functionality.
+- ✅ Perform simple arithmetic calculations in R.
+- ✅ Understand programming terms, like `objects`, `functions`, `arguments` and `vectors`.
+- ✅ Learn basic ways to work with missing data.
+
+---
+
+# R Projects: File paths ♻️
+
+--
+
+Below you see two ways of reading data into R.
+They both work and they both access the same file.
+Which of the following looks more reproducible?:
+
+
+```r
+# option 1: absolute path
+covid_data &lt;- read_csv("/Users/ezormpa/Documents/training/training/r-training/data/covid_data.csv")
+
+# option 2: relative path
+covid_data &lt;- read_csv("data/covid_data.csv")
+```
+
+--
+
+Option 2 is more reproducible, as it allows you to move your project around on your computer and share it with others without having to directly modify file paths in the individual scripts.
+
+---
+
+# R Projects: Folder structure ♻️
+
+--
+
+It is good practice to keep all files related to a project in a single folder, called the `working directory`.
+This includes data, scripts, outputs, and documentation.  
+--
+This makes sharing and documenting your projects much easier.
+
+--
+
+<div id="htmlwidget-d2ffc830ec8f7c8ecef0" style="width:100%;height:252px;" class="nomnoml html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d2ffc830ec8f7c8ecef0">{"x":{"code":"\n#fill: #FEFEFF\n#lineWidth: 1\n#zoom: 4\n#direction: right\n\n#stroke: black\n#direction: down\n\n[working-directory]-[data_raw/]\n[working-directory]-[data_clean/]\n[working-directory]-[figures/]\n[working-directory]-[LICENCE.md]\n[working-directory]-[paper.Rmd]\n[working-directory]-[README.md]\n[working-directory]-[scripts/]","svg":false,"png":null},"evals":[],"jsHooks":[]}</script>
+
+---
+class: inverse
+
+# Create an R Project
+
+1. Under the **`File`** menu, click on **`New project`**
+2. In the wizard that pops up click on **`New directory`** &gt; **`New project`**
+3. You will now create the working directory for the rest of the workshop and save it in a convenient location.
+4. Give a good name to your new directory (folder), e.g. **`r-workshop`**. Make sure your name doesn't have spaces or special characters!
+5. Click on **`Browse`** and navigate to a suitable location for this repository and click on **`Open`** when you are in a location you are happy with.
+3. Click on **`Create project`**.
+
+&lt;!--NOTES FOR DEMO
+
+1. RStudio interface
+- Console: to execute code that you only want to run once
+- Environment/History: to see what you have done. Environment will show you the variables or objects that you create. History will log the commands you have run.
+- Files shows you the files in your working directory. It also allows you to interact with your files!. Plots next to it is where we will see our plots when we start making them in Workshop 4. Help is where you go to get help and is a tab I use all the time!
+
+Let's start at this File tab. I mentioned that you can use it to interact with the files on your computer. Let's try that now. I will click on this folder icon with the big green plus sign and a wizard will pop up. I will name my folder 'scripts'. You can see that the folder has now appeared in the files tab. Please give us a green check mark when you're done with this or a red x if you're having issues.
+
+Code alternative: `dir.create("scripts")`
+
+Now we have a script folder, I will create a script. There are many ways to create an R script. If you go to the File menu again, that we used to make the project file, you should be able to see the New File &gt; R Script option. Click on that and that will immediately open a new file, called Untitled1. That's not a super useful name, but when I save it, I can name it something more meaningful. Let's do that now by clicking on the floppy disk. Again, give your file a sensible name, like intro-to-R. Then remember to save it within the scripts folder!
+
+And now we have all the four panels you usually see when you have RStudio open: the script, the console, the environment, and the files.
+
+You might be wondering what the difference between the console and the script is. Let's take a step back: The basis of programming is that we write down instructions for the computer to follow, and then we tell the computer to follow those instructions. We call the instructions commands and we tell the computer to follow the instructions by executing (also called running) those commands. Scripts and the console are both ways in which we can tell R what commands to run, but they have different purposes.
+- In a script, you write things that you are likely to want to repeat, e.g. your data analysis pipeline.
+- In the console, you write things you do one-off and will not want to do again. You will get a feel for this the longer you use R. A good example of something you'd want to do once in the console and not repeat is install packages.
+
+2. Installing packages
+I mentioned at the beginning that using R is great because there are literally thousands of add-on packages that allow you to do all sorts of things. A package we will use in this workshop series is the `tidyverse` which provides many powerful tools, for example for cleaning and visualising data. So let's see how we can install a package using the console.
+
+Go to the first available line in the console where there is a greater than sign and the blinking cursor. This is R telling you it's ready to do things!
+
+We'll write the command install.packages and then open and close parentheses. You'll see that R helpfully already suggests the name of this function. Install.packages is a function that does what its name implies: it installs packages. In R, you write the name of the function and then open and close parentheses. Inside these parentheses is where you write the arguments, i.e. information that specifies to the function exactly what it is it needs to do. In this case, I need to tell R which package to install. I do that by opening and closing "" and writing tidyverse. We'll talk about functions and quotations marks and all of that in more detail later.
+
+Now that we've written this command, we need to tell R to run it or execute it. You do this by hitting enter or return. You should see something like the message I got in my console. If the last sentence it something like "The downloaded binary packages are in" then you're good. Give us a green tick if you managed to install the tidyverse.
+
+If you didn't get that 1. make sure you included the quotation marks and 2. check your spelling - typos are the source of an astonishing number of errors. Oh and if R says that this package is not available for your version of R, that's just a terrible error message. It's almost certainly the case that you've misspelled the package name.
+
+3. Creating objects in R
+
+Okay, using functions is actually a bit of a big step, so let's start at the beginning and play around with the console a bit and see what the console does. As I said before, we interact with R by giving it commands and R tries to interpet what we told it. These commands can be quite straightforward, for example, we can tell R to do some math for us. Addition, multiplication etc. work as you would expect them to and don't require any special syntax or anything like that. So you can type 3+5 in the console and R will answer 8. You can take a few seconds to try and calculate different things.
+
+Of course this uses R as a glorified calculator; R can do so much more! The first step to doing this is assigning a value to an object. To create an object, we need to give it a name followed by the assignment operator, followed by the value we want that object to have.
+
+For example, weight_kg &lt;- 65
+
+This funny looking arrow is the assignment operator in R. It basically says take this value 65 and save it inside the object weight_kg. Running this command doesn't give an output in the console. BUT we can see that it now appears in our environment! So now R knows two things: that weight_kg is an object and that its value is 65. Because R knows this object now if I just type weight_kg it will tell me 65.
+
+Now that R knows are remembers this object, I can also tell it to do things. Let's say for example, that you work in a context that doesn't use the metric system and you want to convert the weight of this patient from kilos to pounds. You could calculate that by telling R to run 2.2*weight_kg
+
+You can also save  this to a new object, by writing weight_lb &lt;- 2.2*weight_kg
+
+R isn't too attached to what values objects have though - you can easily change them. For example, if you have a new patient with whose data you want to work, you can assign their weight to the object instead. For example, weight_kg &lt;- 80
+
+Note that R is case sensitive. If you'd assigned the new patient's weight to weight_Kg then that would have created a second object rather than overwrite the original one.
+
+What do you think has happened to our weight_lb object now that I've changed the weight_kg variable?
+
+--&gt;
+
+
+---
+class: center, middle, inverse
+
+# Exercise 1
+
+🕤 **3 mins**
+
+Find out the current content of the object `weight_lb`.
+
+<div class="countdown" id="timer_fe88ab31" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+--
+
+&lt;!-- demo the solution in RStudio using comments as a heading--&gt;
+
+**Solution**: Because we have not rerun the code `weight_lb &lt;- 2.2*weight_kg` after assigning the new value of `weight_kg` the value of `weight_lb` is still `143`.
+
+---
+class: center, middle, inverse
+
+# Exercise 2
+
+⏰ **5 mins**
+
+Create two variables `weight` and `height` and assign them values.
+Then create a third variable `bmi` and give it a value using the `weight` and `height` variables.
+
+<div class="countdown" id="timer_75280aa1" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+--
+
+**Hint 1**: The BMI formula is: weight (kg) divided by height (m) squared.
+
+--
+
+**Hint 2**: Squaring in R is written like `^2`, e.g. `3^2 = 9`
+
+--
+
+**Bonus**: An excellent [episode](https://podcasts.apple.com/au/podcast/the-body-mass-index/id1535408667?i=1000530850955) from the podcast Maintenance Phase on the history of the BMI and the problems with using it 🍎 🍐
+
+---
+
+# Functions and their arguments
+
+**Functions** are like "canned" scripts that do a specific task. 
+--
+They usually take some kind of input (called an **argument**) and often give back some kind of output. 
+--
+Running or executing a function is often termed **calling** a function. 
+
+--
+
+The arguments of functions can be anything: e.g. numbers, filenames, but also other objects.
+
+&lt;!--
+4. Functions and their arguments
+
+We've actually already experienced functions early on, when we installed the tidyverse package!
+Let's try another function now.
+We saw how to square a value before, but how do you get the square root of a number?
+Well turns out, there's a function for that, the sqrt() function. 
+
+In R, first you write the name of the function and then you open and close parentheses right next to the function name, no spaces!
+Within the parentheses you write the arguments.
+In the install.packages function we had to tell the function which package to install.
+In the sqrt function, we have to tell it which number's square root to calculate.
+When we run the function, it gives us an output, that is the square root of the input number.
+
+This is a fairly straightforward function that takes one input and gived back one output.
+
+Arguments can be anything, not only numbers or filenames, but also other objects. Exactly what each argument means differs per function, and must be looked up in the documentation (see below). Some functions take arguments which may either be specified by the user, or, if left out, take on a default value: these are called options. Options are typically used to alter the way the function operates, such as whether it ignores ‘bad values’, or what symbol to use in a plot. However, if you want something specific, you can specify a value of your choice which will be used instead of the default.
+
+Let’s try a function that can take multiple arguments: round(). Here, we’ve called round() with just one argument, 3.14159, and it has returned the value 3. That’s because the default is to round to the nearest whole number. If we want more digits we can see how to do that by getting information about the round function. We can use args(round) or look at the help for this function using ?round. We see that if we want a different number of digits, we can type digits=2 or however many we want. If you provide the arguments in the exact same order as they are defined you don’t have to name them. And if you do name the arguments, you can switch their order.
+
+5. Vectors and data types
+
+A vector is the most common and basic data type in R, and is pretty much the workhorse of R. A vector is composed by a series of values, which can be for example numbers or characters. We can assign a series of values to a vector using the c() function. For example we can create a vector of COVID cases in the early days of the pandemic and assign it to an object
+
+covid_cases &lt;- c(0, 3, 5, 3, 61)
+
+A vector can also contain characters. For example, countries for which we have data about their COVID cases
+
+countries &lt;- ("United Kingdom", "Netherlands", "Greece")
+
+The quotes are essential here.
+
+There are many functions that allow you to inspect the content of a vector. length() tells you how many elements are in a particular vector
+length(covid_cases)
+length(countries)
+
+An important feature of a vector, is that all of the elements are the same type of data. The function typeof() indicates the type of an object:
+typeof(covid_cases)
+typeof(countries)
+
+The function str() provides an overview of the structure of an object and its elements. It is a useful function when working with large and complex objects:
+str(covid_cases)
+str(countries)
+
+You can use the c() function to add other elements to your vector:
+
+countries &lt;- c("Germany", countries)
+countries &lt;- c(countries, "Australia")
+
+--&gt;
+
+---
+
+# Vectors and data structures
+
+A **vector** is the simplest R data structure. 
+--
+It is composed by a series of values **of the same type**, e.g.*character* and *numeric* (or *double*). 
+--
+Other vector types are: *logical* for `TRUE` and `FALSE`, *integer* for integer numbers and two others we won't discuss (*complex* and *raw*).
+
+--
+
+The other data structure, other than vectors, we'll talk about in these workshops is the **tibble**, which is a dataframe. 
+
+---
+class: center, middle, inverse
+
+# Exercise 3
+
+🕕 **10 mins**
+
+What will happen in each of these examples?
+
+
+```r
+num_char &lt;- c(1, 2, 3, "a")
+num_logical &lt;- c(1, 2, 3, TRUE)
+char_logical &lt;- c("a", "b", "c", TRUE)
+tricky &lt;- c(1, 2, 3, "4")
+```
+
+<div class="countdown" id="timer_460b9e5c" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+--
+
+**Hint**: use `typeof()` to check the data type of your objects
+
+--
+
+**Solution**: Vectors can be of only **one data type**. R tries to convert (coerce) the content of this vector to find a “common denominator” that doesn’t lose any information.
+
+---
+class: center, middle, inverse
+
+# Exercise 4
+
+🕥 **10 mins**
+
+
+
+```r
+covid_cases &lt;- c(NA, 1, 0, 0, 3, NA, 3, 3, 61, 411, 2570, 7208)
+```
+
+1. Using the above vector, create a new vector with the NAs removed.
+2. For how many weeks did were the COVID cases below 10?
+
+<div class="countdown" id="timer_a3fc7204" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+
+&lt;!--
+
+6. Missing data
+
+As R was designed to analyze datasets, it includes the concept of missing data (which is uncommon in other programming languages). Missing data are represented in vectors as NA.
+
+When doing operations on numbers, most functions will return NA if the data you are working with include missing values. This feature makes it harder to overlook the cases where you are dealing with missing data. You can add the argument na.rm=TRUE to calculate the result while ignoring the missing values.
+
+covid_cases &lt;- c(3, 5 , 12, NA, 80)
+mean(covid_cases)
+max(covid_cases)
+
+mean(covid_cases, na.rm = TRUE)
+max(covid_cases, na.rm = TRUE) --&gt;
+
+---
+class: center, middle, inverse
+
+# Optional exercise
+
+🕞 **5 mins**
+
+How many values in combined_logical are `TRUE` in the following example? What type is the `TRUE` value?
+
+
+```r
+num_logical &lt;- c(1, 2, 3, TRUE)
+char_logical &lt;- c("a", "b", "c", TRUE)
+combined_logical &lt;- c(num_logical, char_logical)
+```
+
+<div class="countdown" id="timer_47e3489e" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+
+# A note on programming
+
+When we say R is a language, we mean just that: We need to learn **a new way of communicating** that lets us talk to the R software. 
+--
+Software isn't as smart as humans and have no tolerance for errors: if we don't tell it what we do just the way it wants, it won't work. 
+
+--
+
+Learning how to speak the software's language takes time and practice. Today you learned **so much**: 
+--
+how to interact with the RStudio GUI, 
+--
+setting up projects, 
+--
+creating files from RStudio, 
+--
+assigning values to objects, 
+--
+using functions, 
+--
+creating and subsetting vectors, 
+--
+learning how to work with missing data 
+--
+✨ 🎉 🌻 😍 💪
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
