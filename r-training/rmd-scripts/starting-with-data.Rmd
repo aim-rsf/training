@@ -1,0 +1,326 @@
+---
+title: "AIM RSF R series: Starting with data in R"
+subtitle: "Based on Data Carpentry: R for Social Scientists"  
+author: 
+  - "Eirini Zormpa"
+date: "8 November 2022 (last updated `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+
+
+library(knitr)
+
+library(RefManageR)
+library(bibtex)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "alphabetic",
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE)
+bib <- ReadBib("bibliography.bib", check = FALSE)
+
+library(readr)
+library(here)
+
+covid_data <- read_csv(here("data", "covid_data.csv"))
+```
+
+# Summary of session 1: Introduction to R
+
+- `r emo::ji("white_check_mark")` Navigate the RStudio Graphical User Interface (GUI).
+- `r emo::ji("white_check_mark")` Install `packages` to access additional functionality.
+- `r emo::ji("white_check_mark")` Perform simple arithmetic calculations in R.
+- `r emo::ji("white_check_mark")` Understand programming terms, like `objects`, `functions`, `arguments` and `vectors`.
+- `r emo::ji("white_check_mark")` Create and manipulate vectors.
+- `r emo::ji("white_check_mark")` Learn basic ways to work with missing data.
+
+---
+
+# Learning objectives: Starting with data in R
+
+- `r emo::ji("white_check_mark")` Read data into R.
+- `r emo::ji("white_check_mark")` Understand and manipulate `data frames`.
+- `r emo::ji("white_check_mark")` Understand and manipulate `factors`.
+- `r emo::ji("white_check_mark")` Alternate between date formats.
+
+---
+
+# Data frames
+
+**Data frames** are the standard data structure for tabular data in `R`. 
+--
+They look very similar to spreadsheets (like in Excel) but each column is, in fact, a vector.
+Each vector needs to be of the same length, for a perfectly rectangular shape `r emo::ji("square")` `r emo::ji("square")` `r emo::ji("square")`.
+
+--
+
+Note that because the columns are all vectors, they must all be of the *same type*.
+
+--
+
+## A note on terminology
+
+Technically, what we will be working with in these workshops aren't `data.frames`, they are `tibbles`.
+`tibbles` are basically data frames for the `tidyverse` - they have some subtle differences but nothing you need to be aware of at this point.
+
+---
+
+# Tabular data: What is tidy data?
+
+--
+
+```{r tidy-data-1, echo = FALSE, out.height="75%", out.width ="75%", fig.align='center'}
+include_graphics(here("rmd-scripts", "images", "tidydata_1.jpg"))
+```
+
+.footnote[llustrations from the [Openscapes](https://www.openscapes.org/) blog [Tidy Data for reproducibility, efficiency, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/) by Julia Lowndes and Allison Horst. `r NoCite(bib, "lowndes_2020")``r NoCite(bib, "wickham_2014")`]
+
+---
+
+# Tabular data: Why tidy data?
+
+```{r tidy-data-2, echo = FALSE, out.height="75%", out.width ="75%", fig.align='center'}
+include_graphics(here("rmd-scripts", "images", "tidydata_2.jpg"))
+```
+
+.footnote[llustrations from the [Openscapes](https://www.openscapes.org/) blog [Tidy Data for reproducibility, efficiency, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/) by Julia Lowndes and Allison Horst. `r NoCite(bib, "lowndes_2020")`]
+
+---
+
+# Tabular data: File formats
+
+--
+
+.pull-left[
+
+### Comma delimited
+
+comma-separated value files (.csv) are plain text files where the columns are separated by commas
+
+`r emo::ji("thumbs_up_medium_light_skin_tone")` commonly used
+
+`r emo::ji("thumbs_down_medium_light_skin_tone")` annoying when data itself contains commas
+
+]
+
+--
+
+.pull-right[
+
+### Tab delimited
+
+tab-separated value files (.tsv) are plain text files where the columns are separated by tabs (\t)
+
+
+`r emo::ji("thumbs_up_medium_light_skin_tone")` no confusion when data contains commas or semicolons
+
+`r emo::ji("thumbs_down_medium_light_skin_tone")` not very commonly used (at least not yet)
+
+]
+
+---
+
+# The data
+
+The data is historic data of worldwide COVID-19 positive cases and deaths.
+The data was made available by the European Centre for Disease Control and Prevention.
+
+They cover the period from 1 January 2020 to 20 June 2022.
+
+.footnote[Source: https://www.ecdc.europa.eu/en/publications-data/download-historical-data-20-june-2022-weekly-number-new-reported-covid-19-cases]
+
+---
+
+# The data: variables
+
+| variable | description |
+|----------|-------------|
+| country  | which country the data come from |
+| country_code | a three-letter code for the country the data come from |
+| continent | the continent in which the reporting country is located |
+| population | the population of the reporting country according to Eurostat for Europe and the World Bank for the rest of the world |
+| indicator | whether the observation is a positive case or a death |
+| weekly_count | the number of positive cases or deaths in the week of reporting |
+| year_week | the year and week when the observations occurred |
+| rate_14_day | the rate of positive cases or deaths in the preceding 14 days |
+| cumulative_count | the total number of cases or deaths from the start of data collection |
+| source | what data source the data come from |
+
+---
+class: inverse
+
+# Importing data: Folders
+
+1. Double click on the R Project you created for the workshop to open RStudio.
+2. Check that the files you see in your `Files` tab are the right ones (you should only see the `scripts` folder and the `.Rproj` file)
+3. Go to the console and type the following commands
+
+
+
+```{r create-directory, eval=FALSE}
+# create separate folders for the raw and clean data
+dir.create("data_raw")
+dir.create("data_clean")
+
+# only if you don't have one already, create a folder for the scripts
+dir.create("scripts")
+```
+
+---
+class: inverse
+
+# Importing data: Download
+
+Then we need to 1) download the data from the ECDC website and 2) save it in the `data_raw` folder we just created it.
+
+We can do both in one go in R by typing the following command in the console:
+
+```{r download-data, eval=FALSE}
+# download the data
+download.file(url = "https://opendata.ecdc.europa.eu/covid19/nationalcasedeath_archive/csv/data.csv",
+              destfile = "data_raw/covid-data.csv")
+```
+
+After you have run this command, open the `data_raw` folder and check that there is a file called `covid-data.csv`.
+
+---
+class: center, middle, inverse
+
+# Exercise 1
+
+`r emo::ji("clock")` **5 mins**
+
+Create a tibble containing only the last 250 observations of `covid_data` (all the columns but only the last 250 rows).
+
+
+Hint: you can get the number of rows in a dataset with `nrow`, e.g. `number_rows <- nrow(covid_data)`
+
+`r countdown::countdown(minutes = 5, color_running_background  = "lightgreen", color_running_text = "black", color_finished_background = "red", color_finished_text =  "grey30")`
+
+
+---
+class: center, middle, inverse
+
+# Exercise 1 solution
+
+There are multiple ways to solve this exercise.
+
+#### Solution 1
+
+```{r e1-s1} 
+e1_s1_data_end <- nrow(covid_data)
+e1_s1_data_start <- e1_s1_data_end - 249
+
+e1_s1_data <- covid_data[e1_s1_data_start:e1_s1_data_end, ]
+```
+
+--
+
+#### Solution 2
+
+```{r e1-s2} 
+
+e1_s2_data <- tail(covid_data, n = 250)
+```
+
+---
+class: center, middle, inverse
+
+# Exercise 2
+
+`r emo::ji("clock")` **3 mins**
+
+Calculate the minimum and maximum values for the countries' populations.
+
+Hint: the functions you need here are `min` and `max`.
+
+`r countdown::countdown(minutes = 3, color_running_background  = "lightgreen", color_running_text = "black", color_finished_background = "red", color_finished_text =  "grey30")`
+
+---
+class: center, middle, inverse
+
+# Exercise 2 solution
+
+```{r e2}
+country_populations <- covid_data$population
+
+min_population_ <- min(country_populations)
+max_population <- max(country_populations)
+```
+
+---
+
+# Factors
+
+R has a special data class, called **factor**, to deal with *categorical data*.
+Factors are very useful and contribute to making R particularly well suited to working with data.
+
+--
+
+Factors are stored as **integers** associated with labels. 
+--
+They can be ordered (ordinal) or unordered (nominal). 
+--
+Factors create a structured relation between the different levels (values) of a categorical variable, such as days of the week or responses to a question in a survey. 
+--
+Once created, factors can only contain a pre-defined set of values, known as **levels**.
+
+--
+
+While factors look (and often behave) like character vectors, they are actually treated as integer vectors by R. **So you need to be very careful when treating them as strings.**
+
+---
+
+# Dates
+
+To avoid ambiguity, use the [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) standard: **YYYYMMDD** (or YYYY-MM-DD).
+
+```{r date-formats, echo = FALSE, out.height="70%", out.width ="70%", fig.align='center'}
+include_graphics(here("rmd-scripts", "images", "date-formats.png"))
+```
+
+.footnote[This [image](https://en.m.wikipedia.org/wiki/File:Date_format_by_country_revised.svg) was created by cmglee, Canuckguy and many others for [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page) and is used under a [CC-BY-SA licence](https://creativecommons.org/licenses/by-sa/4.0/)]
+
+---
+
+# Summary
+
+- `r emo::ji("white_check_mark")` Read data into R.
+- `r emo::ji("white_check_mark")` Understand and manipulate `data frames`.
+- `r emo::ji("white_check_mark")` Understand and manipulate `factors`.
+- `r emo::ji("white_check_mark")` Alternate between date formats.
+
+---
+class: center, middle
+
+# Thank you for your attention `r emo::ji("sparkles")` `r emo::ji("pray")`
+
+## See you next week for data wrangling with `dplyr` and `tidyr` `r emo::ji("wave")`
+
+---
+# References
+
+```{r references, results='asis', echo=FALSE}
+PrintBibliography(bib)
+```
