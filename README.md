@@ -14,3 +14,14 @@ This repository holds information about the training delivered by the AIM RSF:
 | 15 November     | Data Carpentry: Data Wrangling with `dplyr` and `tidyr` | Eirini Zormpa    |
 | 22 November     | Data Carpentry: Data Visualisation with `ggplot2`       | Eirini Zormpa    |
 | 13 December     | Data Carpentry: Literate programming with `R Markdown`  | Eirini Zormpa    |
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
