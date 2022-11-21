@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>AIM RSF R series: Data visualisation with ggplot2</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Eirini Zormpa" />
+    <script src="data-visualisation_files/header-attrs/header-attrs.js"></script>
+    <link href="data-visualisation_files/countdown/countdown.css" rel="stylesheet" />
+    <script src="data-visualisation_files/countdown/countdown.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# AIM RSF R series: Data visualisation with ggplot2
+]
+.subtitle[
+## Based on Data Carpentry: R for Social Scientists
+]
+.author[
+### Eirini Zormpa
+]
+.date[
+### 22 November 2022 (last updated 2022-11-21)
+]
+
+---
+
+
+
+
+# Summary of session 3: Data wrangling with `dplyr` and `tidyr`
+
+- ✅ Subset columns or rows with `select` or `filter` and create new columns with `mutate`.
+- ✅ Link the output of one function to the input of another function with the ‘pipe’ operator `%&gt;%`.
+- ✅ Combine datasets using `join`.
+- ❌ Reshape a dataframe from long to wide format with the `pivot_wider` function.
+- ❌ Export a dataframe to a .csv and .tsv file.
+
+---
+
+# Learning objectives: Data visualisation with `ggplot2`
+
+- ✅ Produce scatter plots, boxplots, and barplots using ggplot.
+- ✅ Set universal plot settings.
+- ✅ Describe what faceting is and apply faceting in ggplot.
+- ✅ Modify the aesthetics of an existing ggplot plot (including axis labels and colour).
+- ✅ Build complex and customized plots from data in a data frame.
+
+---
+
+# Why `ggplot2`?
+
+
+&lt;img src="data-visualisation_files/figure-html/ggplot-1.png" width="100%" /&gt;
+
+---
+class: center, middle
+
+# `ggplot2`
+
+![](https://raw.githubusercontent.com/tidyverse/ggplot2/master/pkgdown/favicon/apple-touch-icon-120x120.png)
+
+[**ggplot2**](https://ggplot2.tidyverse.org/) is a package (included in **tidyverse**) for creating highly customisable plots that are built step-by-step by adding layers.
+
+The separation of a plot into layers allows a high degree of flexibility with minimal effort. 
+
+---
+# `ggplot2` layers
+
+.pull-left[
+```r
+&lt;DATA&gt; %&gt;%
+    ggplot(aes(&lt;MAPPINGS&gt;)) +
+    &lt;GEOM_FUNCTION&gt;() +
+    &lt;CUSTOMISATION&gt;
+```
+]
+
+--
+
+.pull-right[
+
+![A fuzzy monster in a beret and scarf, critiquing their own column graph on a canvas in front of them while other assistant monsters (also in berets) carry over boxes full of elements that can be used to customize a graph (like themes and geometric shapes). In the background is a wall with framed data visualizations. Stylized text reads “ggplot2: build a data masterpiece.](https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/ggplot2_masterpiece.png)
+
+.footnote[Artwork by [Allison Horst](https://allisonhorst.com/), reused under a CC-BY licence.]
+]
+
+---
+
+class: center, middle, inverse
+
+# Data visualisation crash-course
+
+
+---
+
+# Aesthetics
+
+&gt; Whenever we visualise data, we take data values and convert them in a systematic and logical way into the visual elements that make up the final graphic. [...] All data visualisations map data values into quantifiable features of the resulting graphic. We refer to these features as **aesthetics**.
+
+.footnote[Quote from Claus Wilke's [*Fundamentals of Data Visualization*](https://clauswilke.com/dataviz).
+]
+
+--
+
+## Commonly-used aesthetics
+
+.pull-left[
+- position (*x* and *y* coordinates),
+- colour
+]
+
+.pull-right[
+- size
+- shape
+- line type
+]
+
+---
+class: middle
+
+# Find the green dot lvl. 1 👶
+
+
+
+
+
+
+&lt;img src="data-visualisation_files/figure-html/blue-dot1-1.png" width="100%" /&gt;
+
+.footnote[Inspired by Kieran Healy's [*Data Visualization: A practical introduction*](https://socviz.co/). ]
+
+---
+class: middle
+
+# Find the green dot lvl. 2 👨‍🎓
+
+
+&lt;img src="data-visualisation_files/figure-html/blue-dot2-1.png" width="100%" /&gt;
+
+.footnote[Inspired by Kieran Healy's [*Data Visualization: A practical introduction*](https://socviz.co/). ]
+
+---
+class: middle
+
+# Find the green dot lvl. 3 👽
+
+&lt;img src="data-visualisation_files/figure-html/blue-dot3-1.png" width="100%" /&gt;
+
+.footnote[Inspired by Kieran Healy's [*Data Visualization: A practical introduction*](https://socviz.co/). ]
+
+
+---
+
+# Colour considerations
+
+In the previous game, people with the most common type of colour-blindness would have struggled to perceive the colour distinction!
+
+![A comparison of the visible color spectrum in common types of color blindness. For people with Deuteranomaly, affecting 2.7% of the population, red and green are difficult to distinguish from one another.](https://upload.wikimedia.org/wikipedia/commons/a/af/Color_blindness.png)
+
+---
+
+# Viridis palettes
+
+
+.pull-left[
+
+Are relatively colourblind-friendly...
+
+&lt;img src="data-visualisation_files/figure-html/viridis-1.png" width="100%" height="50%" /&gt;
+
+&lt;img src="data-visualisation_files/figure-html/inferno-1.png" width="100%" height="50%" /&gt;
+
+
+]
+
+--
+
+.pull-right[
+
+... and they're pretty 😻
+
+&lt;img src="data-visualisation_files/figure-html/viridis-plot-1.png" width="100%" /&gt;
+]
+
+.footnote[from the [`viridisLite` site](https://sjmgarnier.github.io/viridisLite/reference/viridis.html) by Simon Garnier]
+
+---
+
+class: center, middle, inverse
+
+# Data visualisation exercises
+
+---
+class: center, middle
+
+# Exercise 1
+
+🕧 **5 mins**
+
+Filter the `covid_data_clean` dataset to contain only observations froms Denmark and Sweden for the year 2020 and then create a line plot of the `cases_rate` by `to_date` with the `country` showing in different colours.
+
+<div class="countdown" id="timer_f0077e6d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+class: center, middle, inverse
+
+# Exercise 1: Solution
+
+
+```r
+covid_data_clean %&gt;%
+  filter(country == "Denmark" | country == "Sweden", year  == 2020) %&gt;% 
+  ggplot(aes(x = to_date, y = cases_rate, colour = country)) +
+  geom_line(size = 1.2) +
+  scale_colour_viridis_d()
+```
+
+&lt;img src="data-visualisation_files/figure-html/exercise-1-sol-1.png" alt="Line plot showing the case rate of COVID cases for Denmark and Sweden in 2020. They're both fairly low until October when they start ticking up with Sweden surpassing 400 cases per 100,000 people approximately in December 2020, when Denmark is at about 300 cases per 100,000 people." width="85%" /&gt;
+
+
+---
+class: center, middle, inverse
+
+# Exercise 2
+
+🕐 **10 mins**
+
+Create a (flipped) bar chart that shows the total death count for 2020 for the countries we selected and orders them from the highest death toll to the lowest.
+
+<div class="countdown" id="timer_1d0ef89b" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+--
+
+**Added challenge**: do the same but showing the years 2020, 2021, and 2022 in facets (using `facet_wrap()`).
+
+---
+class: center, middle, inverse
+
+# Exercise 2: Solution (code)
+
+
+```r
+covid_data_clean %&gt;% 
+  drop_na() %&gt;% 
+  filter(country %in% countries,
+         year == 2020) %&gt;% 
+  group_by(country) %&gt;% 
+  summarise(deaths_year = sum(deaths_count)) %&gt;%
+  ungroup() %&gt;% 
+  mutate(country = as.factor(country),
+         country = fct_reorder(country, deaths_year)) %&gt;%
+  ggplot(aes(x = country, y = deaths_year)) +
+  geom_col() +
+  coord_flip()
+```
+
+---
+class: center, middle, inverse
+
+# Exercise 2: Solution (plot)
+
+&lt;img src="data-visualisation_files/figure-html/exercise-2-sol-plot-1.png" width="100%" /&gt;
+
+---
+class: center, middle, inverse
+
+# Exercise 2 bonus: Solution (code)
+
+
+```r
+covid_data_clean %&gt;% 
+  drop_na() %&gt;% 
+  filter(country %in% countries) %&gt;% 
+  group_by(country, year) %&gt;% 
+  summarise(deaths_year = sum(deaths_count)) %&gt;%
+  ungroup() %&gt;% 
+  mutate(country = as.factor(country),
+         country = fct_reorder(country, deaths_year)) %&gt;%
+  ggplot(aes(x = country, y = deaths_year)) +
+  geom_col() +
+  coord_flip() +
+  facet_wrap(~year)
+```
+
+---
+class: center, middle, inverse
+
+# Exercise 2 bonus: Solution (plot)
+
+&lt;img src="data-visualisation_files/figure-html/exercise-2-sol-bonus-plot-1.png" width="100%" /&gt;
+
+---
+
+class: center, middle, inverse
+
+# Data visualisation crash-course continued
+
+---
+
+# The problem with bar plots
+
+
+
+![Plot with five panels. The first shows a bar plot with two bars and the remaining four show four cases for what the underlying data could look like for each bar. In the first case, the data have symmetrical distributions, in the second there is an outlier, in the third the data come from asymmetrical distributions, and in the fourth there is an  unequal number of data points.](images/weissgerber-bar-plots.png)
+
+.footnote[Image from [*Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm*](https://doi.org/10.1371/journal.pbio.1002128) by Weissgerber, Milic, Winham, &amp; Garovic (2015), reused and adapted under a [CC-BY 4.0 licence](https://creativecommons.org/licenses/by/4.0/).] 
+
+---
+
+# A better way: Raincloud plots!
+
+&lt;img src="images/scherer-raincloud-plots.png" alt="Four raincloud plots, each of which consists of a density plot (the cloud) to illustrate the distribution, a scatterplot (the rain) to illustrate the raw data and a boxplot between the two for further information on central tendency." width="67%" style="display: block; margin: auto;" /&gt;
+
+.footnote[Plot created by [Cedric Scherer](https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-and-how-to-create-them-with-ggplot2/) and reused under a [CC-BY licence](https://creativecommons.org/licenses/by/4.0/).)]
+
+
+---
+class: center, middle, inverse
+
+# Exercise 3
+
+⏰ **5 mins**
+
+Build the previous plot again and experiment with at least two themes.
+
+Which do you like best?
+
+.pull-left[
+`theme_minimal`  
+`theme_void`  
+`theme_classic`  
+]
+.pull-right[
+`theme_dark`  
+`theme_grey`  
+`theme_light`
+]
+
+
+<div class="countdown" id="timer_991b51da" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+
+---
+class: center, middle, inverse
+
+# Exercise 3: My preference
+
+I prefer the white background of `theme_minimal` and I like that it retains the major grid, though that's slightly controversial.
+
+I also likes that it gets rid of the black box around the plot.
+
+---
+
+## This is just the beginning!
+
+`ggplot2` and compatible packages give you a huge amount of flexibility to create *exactly* the graph you want!
+
+You can explore packages that let you play around with:
+- beautiful palettes (e.g. `ghibli`, `wesanderson`),
+- new themes (e.g. `hrbrthemes`)
+- additional fonts (e.g. `extrafont`)
+- animated graphs (e.g. `gganimate`)
+- and so much more!
+
+There are more resources for you to explore in the HackMD ✨
+
+---
+# References
+
+Healy, K. (2018). _Data visualization: A practical introduction_.
+Princeton: Princeton University Press. URL:
+[http://www.socviz.co](http://www.socviz.co).
+
+Weissgerber, T. L., N. M. Milic, S. J. Winham, et al. (2015). "Beyond
+Bar and Line Graphs: Time for a New Data Presentation Paradigm". In:
+_PLOS Biology_ 13.4, p. e1002128. DOI:
+[10.1371/journal.pbio.1002128](https://doi.org/10.1371%2Fjournal.pbio.1002128).
+URL:
+[https://doi.org/10.1371/journal.pbio.1002128](https://doi.org/10.1371/journal.pbio.1002128).
+
+Wickham, H. (2016). _ggplot2: Elegant Graphics for Data Analysis_.
+Springer-Verlag New York. ISBN: 978-3-319-24277-4. URL:
+[https://ggplot2.tidyverse.org](https://ggplot2.tidyverse.org).
+
+Wilke, C. O. (2019). _Fundamentals of data visualization: A primer on
+making informative and compelling figures_. Sebastopol, CA.: O'Reilly
+Media Inc. URL:
+[https://clauswilke.com/dataviz/](https://clauswilke.com/dataviz/).
+
+---
+class: center, middle
+
+# Thank you for your attention ✨ 🙏
+
+## See you next week for literate programming with `R Markdown` 📖
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
