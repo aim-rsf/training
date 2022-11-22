@@ -110,10 +110,8 @@ options(scipen=999)
 
 # Learning objectives: Data visualisation with `ggplot2`
 
-- `r emo::ji("white_check_mark")` Produce scatter plots, boxplots, and barplots using ggplot.
-- `r emo::ji("white_check_mark")` Set universal plot settings.
-- `r emo::ji("white_check_mark")` Describe what faceting is and apply faceting in ggplot.
-- `r emo::ji("white_check_mark")` Modify the aesthetics of an existing ggplot plot (including axis labels and colour).
+- `r emo::ji("white_check_mark")` Create line plots, scatter plots, and bar plots using `ggplot2`.
+- `r emo::ji("white_check_mark")` Apply faceting in `ggplot2`.
 - `r emo::ji("white_check_mark")` Build complex and customized plots from data in a data frame.
 
 ---
@@ -391,7 +389,7 @@ class: center, middle
 
 `r emo::ji("clock")` **5 mins**
 
-Filter the `covid_data_clean` dataset to contain only observations froms Denmark and Sweden for the year 2020 and then create a line plot of the `cases_rate` by `to_date` with the `country` showing in different colours.
+Filter the `covid_data_clean` dataset to contain only observations from Denmark and Sweden for the year 2020 and then create a line plot of the `cases_rate` by `to_date` with the `country` showing in different colours.
 
 `r countdown::countdown(minutes = 5, color_running_background  = "lightgreen", color_running_text = "black", color_finished_background = "red", color_finished_text =  "grey30")`
 
@@ -416,7 +414,7 @@ class: center, middle, inverse
 
 `r emo::ji("clock")` **10 mins**
 
-Create a (flipped) bar chart that shows the total death count for 2020 for the countries we selected and orders them from the highest death toll to the lowest.
+Create a (flipped) bar chart that shows the total death count for 2020 for the countries we selected and order them from the highest death toll to the lowest.
 
 `r countdown::countdown(minutes = 10, color_running_background  = "lightgreen", color_running_text = "black", color_finished_background = "red", color_finished_text =  "grey30")`
 
