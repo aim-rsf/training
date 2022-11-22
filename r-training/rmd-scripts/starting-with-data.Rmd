@@ -38,7 +38,7 @@ BibOptions(check.entries = FALSE,
            style = "markdown",
            hyperlink = FALSE,
            dashed = FALSE)
-bib <- ReadBib("bibliography.bib", check = FALSE)
+bib <- ReadBib("bibliography-starting-with-data.bib", check = FALSE)
 
 library(readr)
 library(here)
