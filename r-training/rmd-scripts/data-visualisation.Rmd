@@ -376,7 +376,7 @@ ggplot(dat, aes(x = x, y = y)) +
 ```
 ]
 
-.footnote[from the [`viridisLite` site](https://sjmgarnier.github.io/viridisLite/reference/viridis.html) by Simon Garnier]
+.footnote[from the [`viridisLite` site](https://sjmgarnier.github.io/viridisLite/reference/viridis.html) by Simon Garnier] `r NoCite(bib, "viridisLite")`
 
 ---
 
