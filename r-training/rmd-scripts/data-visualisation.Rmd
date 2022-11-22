@@ -260,7 +260,7 @@ plot3 <- data.frame(x = rnorm(100, 10, 1),
 
 
 
-```{r blue-dot1, echo = FALSE}
+```{r green-dot1, echo = FALSE}
 plot1 %>%
   ggplot(aes(x = x, y = y, colour = z)) +
   geom_point(size = 2.5) +
@@ -280,7 +280,7 @@ class: middle
 # Find the green dot lvl. 2 `r emo::ji("graduate")`
 
 
-```{r blue-dot2, echo = FALSE}
+```{r green-dot2, echo = FALSE}
 plot2 %>%
   ggplot(aes(x = x, y = y, shape = z)) +
   geom_point(colour = "#7aeb7a", size = 2.5) +
@@ -298,7 +298,7 @@ class: middle
 
 # Find the green dot lvl. 3 `r emo::ji("alien")`
 
-```{r blue-dot3, echo = FALSE}
+```{r green-dot3, echo = FALSE}
 plot3 %>%
   ggplot(aes(x = x, y = y, shape = z, colour = aa)) +
   geom_point(size = 2.5) +
