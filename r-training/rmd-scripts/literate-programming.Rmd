@@ -1,0 +1,56 @@
+---
+title: "AIM RSF R series: Literate programming with R Markdown"
+subtitle: "Based on Data Carpentry: R for Social Scientists"  
+author: 
+  - "Eirini Zormpa"
+date: "13 December 2022 (last updated `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    fig_caption: false
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+
+library(knitr)
+library(readr)
+library(here)
+
+```
+
+# Summary of session 4: Data visualisation with `ggplot2`
+
+- `r emo::ji("white_check_mark")` Create line plots, scatter plots, and bar plots using `ggplot2`.
+- `r emo::ji("white_check_mark")` Apply faceting in `ggplot2`.
+- `r emo::ji("white_check_mark")` Build complex and customized plots from data in a data frame.
+
+---
+
+# Learning objectives: Literate programming with `R Markdown`
+- `r emo::ji("white_check_mark")` Create a .Rmd document containing R code, text, and plots
+- `r emo::ji("white_check_mark")` Create a YAML header to control output
+- `r emo::ji("white_check_mark")` Understand basic syntax of (R)Markdown
+- `r emo::ji("white_check_mark")` Customise code chunks to control formatting
+- `r emo::ji("white_check_mark")` Use code chunks and in-line code to create dynamic, reproducible documents
+
+---
+class: center, middle
+
+# Thank you for your attention and participation throughout this workshop series`r emo::ji("sparkles")` `r emo::ji("pray")`
+
