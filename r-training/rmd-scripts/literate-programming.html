@@ -21,7 +21,7 @@ class: center, middle, inverse, title-slide
 ### Eirini Zormpa
 ]
 .date[
-### 13 December 2022 (last updated 2022-11-25)
+### 13 December 2022 (last updated 2022-12-12)
 ]
 
 ---
@@ -36,13 +36,145 @@ class: center, middle, inverse, title-slide
 - ✅ Build complex and customized plots from data in a data frame.
 
 ---
+class: center, middle
+
+# Any questions?
+
+---
 
 # Learning objectives: Literate programming with `R Markdown`
+
+- ✅ Describe what literate programming is and explain why it is useful
 - ✅ Create a .Rmd document containing R code, text, and plots
 - ✅ Create a YAML header to control output
 - ✅ Understand basic syntax of (R)Markdown
 - ✅ Customise code chunks to control formatting
-- ✅ Use code chunks and in-line code to create dynamic, reproducible documents
+
+---
+
+# What is literate programming?
+
+With literate programming, we can combine (nicely formatted!) narrative text with code, all in the same document.
+
+--
+
+R Markdown is one example of such a document, but you may have also heard of Jupyter notebooks, which do something similar.
+
+--
+
+I love R Markdown documents because 1. they are reproducible and 2 they are extremely versatile.
+
+---
+
+# Example of an `R Markdown` document
+
+.pull-left[
+
+&lt;img src="images/rmarkdown-file.png" alt="Visualisation of the R Markdown flow." width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+.pull-right[
+
+&lt;img src="images/rmarkdown-output.png" alt="Visualisation of the R Markdown flow." width="83%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Why `R Markdown`: reproducibility ♻️
+
+By combining code and text in the same document:
+
+- it's easier to **document** your data cleaning and analysis, helping you and other understand your work
+- it's easier to **avoid copy-paste errors**
+- it's easier to **update your manuscript** if you collect more data or change your data cleaning 
+
+---
+
+# Why `R Markdown`: versatility
+
+&lt;img src="https://raw.githubusercontent.com/datacarpentry/r-socialsci/main/fig/rmd-rmd_to_html.png" alt="Visualisation of the R Markdown flow." width="50%" style="display: block; margin: auto;" /&gt;
+
+--
+
+## Outputs
+
+You can create different kinds of documents from R Markdown: **reports**, **slides** (like these ones!), journal **papers**, interactive **web apps**!
+
+---
+
+# Anatomy of an `R Markdown` document
+
+.pull-left[
+
+&lt;img src="images/rmarkdown-file-2.png" alt="Visualisation of the R Markdown flow." width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+.pull-right[
+
+1. YAML header
+2. Markdown text
+3. Code chunks (supports R, Python, Stan, etc.)
+
+]
+
+---
+
+# `here` for relative paths
+
+&lt;img src="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/main/rstats-artwork/here.png" alt="A cartoon showing two paths side-by-side. On the left is a scary spooky forest, with spiderwebs and gnarled trees, with file paths written on the branches like “~/mmm/nope.csv” and “setwd(“/haha/good/luck/”), with a scared looking cute fuzzy monster running out of it. On the right is a bright, colorful path with flowers, rainbow and sunshine, with signs saying “here!” and “it’s all right here!” A monster facing away from us in a backpack and walking stick is looking toward the right path. Stylized text reads “here: find your path." width="50%" style="display: block; margin: auto;" /&gt;
+
+.footnote[Artwork by [Allison Horst](https://allisonhorst.com/), reused under a CC-BY licence.]
+
+---
+
+# Customising chunk output
+
+There are options available to customise how the code-chunks are presented in the output document.
+The options are entered in the code chunk after `chunk-name`and separated by commas, e.g. `{r chunk-name, eval = FALSE, echo = TRUE}`.
+
+| Option | Output |
+|--------|--------|
+| `eval` | Whether or not the code within the code chunk should be run. |
+| `echo` | Whether the code chunk will appear in the output document. |
+| `include` | Whether if the output of a code chunk should be included in the document.|
+| `warning` | Whether the output document will contain warning messages. |
+| `message` | Whether the output document will display messages. |
+| `fig.align` | Where the figure from your R code chunk should be positioned on the page.
+
+
+---
+class: center, middle, inverse
+
+# Exercise 1
+
+Play around with the different options in the previous code chunk, and re-**Knit** to see what each option does to the output.
+
+What happens if you use `eval = FALSE` and `echo = FALSE`? What is the difference between this and `include = FALSE`? 
+
+---
+class: inverse
+
+# Writing papers in `R Markdown`
+
+1. Install `tinytex` to install a LaTeX distribution, if you don't already have one
+    - load `tinytex` and then run the command `tinytex::install_tinytex()`
+2. Install `rticles`
+3. Create a new R Markdown file `From a template`
+
+---
+
+# `Quarto`: The future of `R Markdown`
+
+&lt;img src="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/main/julie-mine-quarto-keynote/quarto_schematic.png" alt="A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto." width="90%" style="display: block; margin: auto;" /&gt;
+
+.footnote[Artwork by [Allison Horst](https://allisonhorst.com/), reused under a CC-BY licence.]
+
+
 
 ---
 class: center, middle

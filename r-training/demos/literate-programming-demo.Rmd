@@ -53,7 +53,7 @@ This is [a link]()
 
 This embeds an image:
 
-![alt text](URL or file path to image)
+![alt text](https://www.turing.ac.uk/research/research-projects/ai-multiple-long-term-conditions-research-support-facility)
 
 ## Other
 This is^[a footnote]
@@ -63,7 +63,6 @@ This is^[a footnote]
 ```{r}
 
 countries <- c("UK", "Netherlands", "Germany")
-
 countries <- c(countries, "Greece")
 
 ```
@@ -74,10 +73,61 @@ library(tidyverse)
 ```
 
 ```{r}
-covid_data <- read_tsv("data/covid_data_clean.tsv")
+#covid_data <- read_tsv("data/covid_data_clean.tsv")
 
 # 1. make sure to run previous chunks. If you want to run everything before your chunk you can use that other button but note that you don't wanna do this everytime, as if there's a lot of stuff it could take a while!
 # 2. R sets the working directory to where the R Markdown document is saved. Two ways to deal with this: remember and go up a folder or (better) use `here`
 ```
 
+```{r}
+library(here)
+
+covid_data <- read_tsv(here("data/covid_data_clean.tsv"))
+
+# knit
+# restructure to move the library commands to the set up chunk
+# talk about options
+```
+
+```{r}
+covid_data %>% 
+  drop_na() %>% 
+  filter(country %in% countries,
+         year == 2020) %>% 
+  group_by(country) %>% 
+  summarise(deaths_year = sum(deaths_count)) %>% 
+  knitr::kable(caption = "Total deaths per year",
+               col.names = c("Country", "Deaths per year"))
+```
+
+```{r}
+deaths_per_year_2020_de <- covid_data %>% 
+  drop_na() %>% 
+  filter(country == "Greece",
+         year == 2020) %>% 
+  group_by(country) %>% 
+  summarise(deaths_year = sum(deaths_count))
+```
+
+There were `r deaths_per_year_2020_de$deaths_year` deaths in 2020 in Greece
+
+```{r}
+covid_data %>% 
+  drop_na() %>% 
+  filter(country %in% countries,
+         year == 2020) %>% 
+  group_by(country) %>% 
+  summarise(deaths_year = sum(deaths_count)) %>%
+  ungroup() %>% 
+  mutate(country = as.factor(country),
+         country = fct_reorder(country, deaths_year)) %>%
+  ggplot(aes(x = country, y = deaths_year)) +
+  geom_col() +
+  coord_flip() +
+  labs(title = "Total deaths in 2020 for selected countries",
+       x = "",
+       y = "Total deaths in 2020")
+
+# fig. caption and dimensions
+```
 
