@@ -41,13 +41,74 @@ library(here)
 - `r emo::ji("white_check_mark")` Build complex and customized plots from data in a data frame.
 
 ---
+class: center, middle
+
+# Questions?
+
+---
 
 # Learning objectives: Literate programming with `R Markdown`
+
 - `r emo::ji("white_check_mark")` Create a .Rmd document containing R code, text, and plots
 - `r emo::ji("white_check_mark")` Create a YAML header to control output
 - `r emo::ji("white_check_mark")` Understand basic syntax of (R)Markdown
 - `r emo::ji("white_check_mark")` Customise code chunks to control formatting
 - `r emo::ji("white_check_mark")` Use code chunks and in-line code to create dynamic, reproducible documents
+
+---
+
+# What is literate programming?
+
+With literate programming, we can combine (nicely formatted!) narrative text with code, all in the same document.
+
+R Markdown is one example of such a document, but you may have also heard of Jupyter notebooks, which do something similar.
+
+I love R Markdown documents because 1. they are reproducible and 2 they are extremely versatile.
+
+---
+
+# Why `R Markdown`: reproducibility `r emo::ji("recycle")`
+
+By combining code and text in the same document:
+
+- it's easier to document your data cleaning and analysis, helping you and other understand your work
+- it's easier to avoid copy-paste errors
+- it's easier to update your manuscript if you collect more data or change your data cleaning 
+
+---
+
+# Why `R Markdown`: versatility
+
+outputs: reports, slides (like these ones!), journal papers, interactive web apps!
+
+[examples]
+
+---
+
+# Anatomy of an `R Markdown` document
+
+1. YAML header
+2. Markdown text
+3. Code chunks (supports R, Python, STAN, etc.)
+
+[example]
+
+---
+class: center, middle, inverse
+
+# Exercise 1
+
+[Markdown syntax exercise]
+
+---
+
+# `here` for relative paths
+
+---
+
+# The future of `R Markdown`
+
+[Quatro]
 
 ---
 class: center, middle

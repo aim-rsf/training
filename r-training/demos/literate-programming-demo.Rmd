@@ -1,0 +1,83 @@
+---
+title: "Literate programming with R Markdown demo"
+author: "Eirini Zormpa"
+date: "2022-12-09"
+output:
+  html_document:
+    theme: flatly
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction to Markdown
+
+# Header 1
+## Header 2
+### Header 3
+#### Header 4
+##### Header 5
+###### Header 6
+
+## Text formatting
+
+This is some normal text.
+This is some *italics* text.
+This is some **bold** text.
+This is ***bold and italic*** text.
+This is some ~~strikethrough text~~.
+
+## Lists
+
+This is an ordered list:
+
+1. item 1
+    a. item 1.1
+    a. item 1.2
+2. item 2
+3. item 3
+4. item 4
+
+This is an unordered list:
+
+- item 
+- item
+- item
+- item
+
+## Links
+
+This is [a link]()
+
+This embeds an image:
+
+![alt text](URL or file path to image)
+
+## Other
+This is^[a footnote]
+
+# R Markdown
+
+```{r}
+
+countries <- c("UK", "Netherlands", "Germany")
+
+countries <- c(countries, "Greece")
+
+```
+
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+covid_data <- read_tsv("data/covid_data_clean.tsv")
+
+# 1. make sure to run previous chunks. If you want to run everything before your chunk you can use that other button but note that you don't wanna do this everytime, as if there's a lot of stuff it could take a while!
+# 2. R sets the working directory to where the R Markdown document is saved. Two ways to deal with this: remember and go up a folder or (better) use `here`
+```
+
+
