@@ -3,7 +3,7 @@ title: "AIM RSF R series: Literate programming with R Markdown"
 subtitle: "Based on Data Carpentry: R for Social Scientists"  
 author: 
   - "Eirini Zormpa"
-date: "13 December 2022 (last updated `r Sys.Date()`)"
+date: "10 January 2023 (last updated `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -50,9 +50,8 @@ class: center, middle
 # Learning objectives: Literate programming with `R Markdown`
 
 - `r emo::ji("white_check_mark")` Describe what literate programming is and explain why it is useful
-- `r emo::ji("white_check_mark")` Create a .Rmd document containing R code, text, and plots
-- `r emo::ji("white_check_mark")` Create a YAML header to control output
-- `r emo::ji("white_check_mark")` Understand basic syntax of (R)Markdown
+- `r emo::ji("white_check_mark")` Create a `.Rmd` document containing R code, text, and plots
+- `r emo::ji("white_check_mark")` Understand basic syntax of (R) Markdown
 - `r emo::ji("white_check_mark")` Customise code chunks to control formatting
 
 ---
@@ -63,11 +62,11 @@ With literate programming, we can combine (nicely formatted!) narrative text wit
 
 --
 
-R Markdown is one example of such a document, but you may have also heard of Jupyter notebooks, which do something similar.
+`R Markdown` is one example of such a document, but you may have also heard of Jupyter notebooks, which do something similar.
 
 --
 
-I love R Markdown documents because 1. they are reproducible and 2 they are extremely versatile.
+I love `R Markdown` documents because 1. they are reproducible  and 2. they are extremely versatile.
 
 ---
 
@@ -82,6 +81,7 @@ knitr::include_graphics("images/rmarkdown-file.png")
 
 ]
 
+--
 
 .pull-right[
 
@@ -92,6 +92,7 @@ knitr::include_graphics("images/rmarkdown-output.png")
 
 ]
 
+
 ---
 
 # Why `R Markdown`: reproducibility `r emo::ji("recycle")`
@@ -99,9 +100,12 @@ knitr::include_graphics("images/rmarkdown-output.png")
 By combining code and text in the same document:
 
 - it's easier to **document** your data cleaning and analysis, helping you and other understand your work
+--
 - it's easier to **avoid copy-paste errors**
+--
 - it's easier to **update your manuscript** if you collect more data or change your data cleaning 
-
+--
+- because `.Rmd` files are plain text files, they are compatible with version control systems, such as `git`. 
 ---
 
 # Why `R Markdown`: versatility
@@ -191,6 +195,7 @@ class: inverse
 # `Quarto`: The future of `R Markdown`
 
 ```{r, echo=FALSE, fig.cap="A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto.", out.width="90%", fig.align='center'}
+
 
 knitr::include_graphics("https://raw.githubusercontent.com/allisonhorst/stats-illustrations/main/julie-mine-quarto-keynote/quarto_schematic.png")
 ```
