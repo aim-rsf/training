@@ -58,7 +58,7 @@ class: center, middle
 
 # What is literate programming?
 
-With literate programming, we can combine (nicely formatted!) narrative text with code, all in the same document.
+With literate programming, we can combine (nicely formatted!) narrative text with code, and code output all in the same document.
 
 --
 
@@ -97,7 +97,7 @@ knitr::include_graphics("images/rmarkdown-output.png")
 
 # Why `R Markdown`: reproducibility `r emo::ji("recycle")`
 
-By combining code and text in the same document:
+By combining text, code, and code output in the same document:
 
 - it's easier to **document** your data cleaning and analysis, helping you and other understand your work
 
