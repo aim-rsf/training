@@ -1,21 +1,21 @@
 ---
-title: "Literate programming with R Markdown demo"
+title: "Literate programming demo"
 author: "Eirini Zormpa"
-date: "2022-12-09"
-output:
+date: "2023-01-10"
+output: 
   html_document:
+    toc: TRUE
     theme: flatly
-    toc: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Introduction to Markdown
+# R Markdown intro
+## Headers
 
-# Header 1
-## Header 2
+
 ### Header 3
 #### Header 4
 ##### Header 5
@@ -23,111 +23,108 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Text formatting
 
-This is some normal text.
-This is some *italics* text.
-This is some **bold** text.
-This is ***bold and italic*** text.
-This is some ~~strikethrough text~~.
+Let's write some text in Markdown!
+
+This is *italics* text. This is also some _italics_ text. This is some *italics* text. This is also some _italics_ text. This is some *italics* text. This is also some _italics_ text. This is some *italics* text. This is also some _italics_ text. This is some *italics* text. This is also some _italics_ text.
+
+This is *italics* text. This is also some _italics_ text.
+This is some *italics* text. This is also some _italics_ text.
+This is some *italics* text. This is also some _italics_ text.
+This is some *italics* text. This is also some _italics_ text.
+This is some *italics* text. This is also some _italics_ text.
+
+This is some **bold** text. This is some more __bold__ text.
+
+This is some ~~strikethrough~~ text.
 
 ## Lists
 
-This is an ordered list:
+Ordered lists
+
+This is the ordered list:
 
 1. item 1
-    a. item 1.1
+    1. item 1.1
     a. item 1.2
+    a. item 1.3
 2. item 2
-3. item 3
-4. item 4
+2. item 3
+2. item 4
 
 This is an unordered list:
 
-- item 
 - item
 - item
 - item
 
-## Links
+## Other formatting
 
-This is [a link]()
+- links: [R Markdown Cheatsheet](https://posit.co/blog/the-r-markdown-cheat-sheet/)
+- images: ![R Markdown logo](https://posit.co/wp-content/uploads/2014/08/the-r-markdown-cheat-sheet.jpg)
+- footnote^[this is the text of my footnote]
 
-This embeds an image:
-
-![alt text](https://www.turing.ac.uk/research/research-projects/ai-multiple-long-term-conditions-research-support-facility)
-
-## Other
-This is^[a footnote]
-
-# R Markdown
+## Code
 
 ```{r}
-
-countries <- c("UK", "Netherlands", "Germany")
-countries <- c(countries, "Greece")
-
+countries <- c("United Kingdom", "Greece", "Netherlands")
+population_m <- c(68, 11, 17)
 ```
 
-
-```{r}
+```{r load-packages}
 library(tidyverse)
-```
-
-```{r}
-#covid_data <- read_tsv("data/covid_data_clean.tsv")
-
-# 1. make sure to run previous chunks. If you want to run everything before your chunk you can use that other button but note that you don't wanna do this everytime, as if there's a lot of stuff it could take a while!
-# 2. R sets the working directory to where the R Markdown document is saved. Two ways to deal with this: remember and go up a folder or (better) use `here`
-```
-
-```{r}
 library(here)
-
-covid_data <- read_tsv(here("data/covid_data_clean.tsv"))
-
-# knit
-# restructure to move the library commands to the set up chunk
-# talk about options
 ```
 
-```{r}
+```{r read-data}
+covid_data <- read_tsv(here("data_clean", "covid_data_clean.tsv"))
+```
+
+```{r table}
 covid_data %>% 
   drop_na() %>% 
   filter(country %in% countries,
-         year == 2020) %>% 
+         year == 2020) %>%
   group_by(country) %>% 
-  summarise(deaths_year = sum(deaths_count)) %>% 
-  knitr::kable(caption = "Total deaths per year",
-               col.names = c("Country", "Deaths per year"))
+  summarise(deaths_per_year = sum(deaths_count)) %>% 
+  knitr::kable(col.names = c("Country", "Deaths per year"),
+               caption = "COVID deaths per country for selected countries in 2020")
+
 ```
 
-```{r}
-deaths_per_year_2020_de <- covid_data %>% 
+```{r deaths-per-year}
+deaths_per_year <- covid_data %>% 
   drop_na() %>% 
-  filter(country == "Greece",
-         year == 2020) %>% 
+  filter(country %in% countries,
+         year == 2020) %>%
   group_by(country) %>% 
-  summarise(deaths_year = sum(deaths_count))
+  summarise(deaths_per_year = sum(deaths_count))
+
+deaths_per_year$deaths_per_year[1]
+
 ```
 
-There were `r deaths_per_year_2020_de$deaths_year` deaths in 2020 in Greece
+There were `r deaths_per_year$deaths_per_year[1]` COVID deaths in Greece in 2020.
 
-```{r}
+
+```{r deaths-per-year-plot, fig.height=6, fig.align='center', fig.cap= "Plot showing total deaths in selected countries in 2020", include=FALSE}
 covid_data %>% 
   drop_na() %>% 
   filter(country %in% countries,
-         year == 2020) %>% 
+         year == 2020) %>%
   group_by(country) %>% 
-  summarise(deaths_year = sum(deaths_count)) %>%
+  summarise(deaths_per_year = sum(deaths_count)) %>% 
   ungroup() %>% 
   mutate(country = as.factor(country),
-         country = fct_reorder(country, deaths_year)) %>%
-  ggplot(aes(x = country, y = deaths_year)) +
+         country = reorder(country, deaths_per_year)) %>% 
+  ggplot(aes(x = country, y = deaths_per_year)) +
   geom_col() +
-  coord_flip() +
-  labs(title = "Total deaths in 2020 for selected countries",
-       x = "",
-       y = "Total deaths in 2020")
+  coord_flip()
 
-# fig. caption and dimensions
 ```
+
+
+
+
+
+
 
