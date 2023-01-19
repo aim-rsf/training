@@ -14,7 +14,7 @@ We use this file to practise collaborating with each other on GitHub :tada: Add 
 8. Meenu 🌻
 9. Rebecca
 10. Emilia Holland
-11.
+11. Barney Jones
 12. Ellen Moss
 13. Muhammad Usman
 14. Dave Chapman 🎱
