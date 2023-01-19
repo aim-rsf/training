@@ -20,7 +20,7 @@ We use this file to practise collaborating with each other on GitHub :tada: Add 
 14. Dave Chapman 🎱
 15. Helen Ying He
 16. Ismail
-17. 
+17. Kelly Cheung 💖
 18. Daniel Stow 🦒
 19. 
 20. 
