@@ -14,6 +14,17 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "BrainonSilicon",
+      "name": "Sophia Batchelor",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42813259?v=4",
+      "profile": "http://www.brainonsilicon.com",
+      "contributions": [
+        "tutorial",
+        "talk",
+        "mentoring"
+      ]
     }
   ],
   "contributorsPerLine": 7,
