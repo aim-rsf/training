@@ -22,7 +22,7 @@ We use this file to practise collaborating with each other on GitHub :tada: Add 
 16. Ismail
 17. Kelly
 18. Daniel Stow 🦒
-19. 
+19. This is Sophia (again!) 🚀 
 20. 
 21. Susana Roman Garcia
 22.
