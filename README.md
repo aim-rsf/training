@@ -1,6 +1,6 @@
 # About
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This repository holds information about the training delivered by the AIM RSF:
@@ -33,7 +33,8 @@ This repository holds information about the training delivered by the AIM RSF:
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://github.com/eirini-zormpa"><img src="https://avatars.githubusercontent.com/u/30151074?v=4?s=100" width="100px;" alt="Eirini Zormpa"/><br /><sub><b>Eirini Zormpa</b></sub></a><br /><a href="#content-eirini-zormpa" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/eirini-zormpa"><img src="https://avatars.githubusercontent.com/u/30151074?v=4?s=100" width="100px;" alt="Eirini Zormpa"/><br /><sub><b>Eirini Zormpa</b></sub></a><br /><a href="#content-eirini-zormpa" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.brainonsilicon.com"><img src="https://avatars.githubusercontent.com/u/42813259?v=4?s=100" width="100px;" alt="Sophia Batchelor"/><br /><sub><b>Sophia Batchelor</b></sub></a><br /><a href="#tutorial-BrainonSilicon" title="Tutorials">✅</a> <a href="#talk-BrainonSilicon" title="Talks">📢</a> <a href="#mentoring-BrainonSilicon" title="Mentoring">🧑‍🏫</a></td>
     </tr>
   </tbody>
 </table>
