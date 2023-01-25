@@ -12,6 +12,9 @@ This repository holds information about the training delivered by the AIM RSF:
 
 | Date              | Title                                                      | Speaker          |
 | ------------------| -----------------------------------------------------------|------------------|
+| TBD               | Introduction to version control and `git`                  | TBD              |
+| TBD               | Introduction to GitHub                                     | TBD              |
+| TBD               | Collaborating on GitHub (hands-on session)                 | TBD              |
 | TBD               | GitHub for Project Management (postponed from 26 Oct 2022) | Sophia Batchelor |
 
 ## Past events
