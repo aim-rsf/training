@@ -26,7 +26,7 @@ This repository holds information about the training delivered by the AIM RSF:
 | 8 November 2022   | Data Carpentry: Starting with Data in R                 | Eirini Zormpa    |
 | 15 November 2022  | Data Carpentry: Data Wrangling with `dplyr` and `tidyr`    | Eirini Zormpa    |
 | 22 November 2022  | Data Carpentry: Data Visualisation with `ggplot2`          | Eirini Zormpa    |
-| 13 December 2022  | Data Carpentry: Literate programming with `R Markdown`     | Eirini Zormpa    |
+| 10 January 2023   | Data Carpentry: Literate programming with `R Markdown`     | Eirini Zormpa    |
 
 ## Contributors
 
