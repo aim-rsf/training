@@ -16,14 +16,21 @@ This repository holds information about the training delivered by the AIM RSF:
 
 ## Past events
 
+### 2023
+
 | Date              | Title                                                   | Speaker          |
 | ------------------| ------------------------------------------------------- |------------------|
-| 18 October 2022   | Introduction to GitHub for Collaboration                | Eirini Zormpa    |
-| 1 November 2022   | Data Carpentry: Introduction to R                       | Eirini Zormpa    |
+| 11 January 2023  | Data Carpentry: Literate programming with `R Markdown`   | Eirini Zormpa    |
+
+### 2022
+
+| Date              | Title                                                   | Speaker          |
+| ------------------| ------------------------------------------------------- |------------------|
+| 22 November 2022  | Data Carpentry: Data Visualisation with `ggplot2`       | Eirini Zormpa    |
+| 15 November 2022  | Data Carpentry: Data Wrangling with `dplyr` and `tidyr` | Eirini Zormpa    |
 | 8 November 2022   | Data Carpentry: Starting with Data in R                 | Eirini Zormpa    |
-| 15 November 2022  | Data Carpentry: Data Wrangling with `dplyr` and `tidyr`    | Eirini Zormpa    |
-| 22 November 2022  | Data Carpentry: Data Visualisation with `ggplot2`          | Eirini Zormpa    |
-| 13 December 2022  | Data Carpentry: Literate programming with `R Markdown`     | Eirini Zormpa    |
+| 1 November 2022   | Data Carpentry: Introduction to R                       | Eirini Zormpa    |
+| 18 October 2022   | Introduction to GitHub for Collaboration                | Eirini Zormpa    |
 
 ## Contributors
 
