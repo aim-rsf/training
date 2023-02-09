@@ -12,6 +12,7 @@ This repository holds information about the training delivered by the AIM RSF:
 
 | Date              | Title                                                      | Speaker          |
 | ------------------| -----------------------------------------------------------|------------------|
+| 1 March 2023      | Interactive dashboards with `R Shiny`                      | Evelina Gabasova |
 | TBD               | GitHub for Project Management (postponed from 26 Oct 2022) | Sophia Batchelor |
 
 ## Past events
