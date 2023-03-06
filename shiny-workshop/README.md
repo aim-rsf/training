@@ -1,5 +1,7 @@
 # R Shiny Workshop
-Wednesday 1 March 2023
+:spiral_calendar: Wednesday 1 March 2023
+
+:books: [Workshop slides](https://hackmd.io/@evelina/shiny-slides#/)
 
 ## Part 1 : Getting Started
 
