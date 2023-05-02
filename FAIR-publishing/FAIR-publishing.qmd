@@ -1,0 +1,666 @@
+---
+title: "How to publish FAIR research outputs"
+author: "Eirini Zormpa"
+institute: "The Alan Turing Institute"
+format:
+  revealjs:
+    theme: [moon, custom.scss]
+    logo: images/rsf-logo-white.png
+    slide-numner: true
+from: markdown+emoji
+---
+
+
+## Introductions :wave:
+
+![](https://www.turing.ac.uk/sites/default/files/styles/people/public/2022-06/eirini-zormpa.jpg?itok=Cx2rNcHY){.absolute top=100 right=50 width="320" height="384"}
+
+::: {.column width="60%"}
+**Eirini Zormpa**, Community Manager Open Collaboration
+
+<br>
+
+Previously:
+
+- Trainer on Research Data Management & Open Science @ Delft University of Technology :computer:
+- Doctoral Researcher @ Max Planck Institute for Psycholinguistics :brain:
+:::
+
+## Housekeeping
+
+- If anything is unclear during the talk, please ask clarification questions at any time. Just raise your physical or virtual hand :hand:
+
+. . .
+
+- For longer, content questions, please put them in the Slido for this session - use the code `#aimrsf-opensci`. Don't forget to upvote questions you agree with :thumbsup:
+
+. . .
+
+-  We are following the [Events Code of Conduct of The Alan Turing Institute](https://www.turing.ac.uk/events/policies-and-guidelines) :busts_in_silhouette:
+
+. . .
+
+- For online attendees: if you accidentally leave the session, you can just join back in with the same log-in details :link:
+
+## Learning objectives
+
+- :white_check_mark: To expand the definition of "research outputs"
+- :white_check_mark: To define the FAIR principles
+- :white_check_mark: To explain how to choose a repository
+- :white_check_mark: To demonstrate how to use a repository for archiving research outputs
+
+<br>
+<br>
+
+**By the end of the workshop, you will be able to use a repository to archive research output in a FAIR manner**.
+
+## Advertising scholarship
+
+> An article about computational science in a scientific publication is not the scholarship itself, it is merely **advertising** of the scholarship.
+
+::: {.fragment .fade-down}
+Jon Claerbout, paraphrased in Buckheit & Donoho (1995) ([link](https://doi.org/10.1007/978-1-4612-2544-7_5), [free version](https://statweb.stanford.edu/~wavelab/Wavelab_850/wavelab.pdf)).
+:::
+
+::: aside
+Slide credit: [Dr Anna Krystalli](https://annakrystalli.me/talks/reproducibility-value-in-practice.html#13)
+:::
+
+
+## The actual scholarship
+
+The actual outputs created during a research project will differ but some examples include:
+
+- Preregistrations
+- Presentations and posters on your findings
+- Datasets
+- Protocols and workflows
+- Code (analysis scripts and software packages)
+- Outputs related to other aspects of your work, e.g. educational materials
+
+## What to share?
+
+The more you can share the better, [**within reason**]{style="color:#F2B705"}.
+
+- At a minimum, you should share the data and code needed to confirm your findings.
+- Additionally, a lot of work goes into creating those datasets and scripts, e.g. code lists, experimental protocols, consent forms.
+
+<br>
+
+<br>
+
+**Don't worry that your outputs aren't important! [You never know what will end up being useful for others!]{style="color:#F2B705"}**
+
+## Evelina's example
+
+![](https://www.turing.ac.uk/sites/default/files/styles/people/public/2018-06/evelina-gabasova_1000x921_jpg.jpg?itok=SUNC-Irv){.absolute top=100 right=50 width="320" height="384"}
+
+::: {.column width="60%"}
+
+**Evelina Gabasova**, Principal Research Data Scientist
+
+::: {.r-stack}
+![](images/evelina-github.png){.fragment}
+
+![](images/zenodo-sw.png){.fragment}
+
+![](images/gs-sw.png){.fragment}
+:::
+
+:::
+
+## Why share all these other outputs?
+
+![](images/share-work.jpg)
+
+
+## What (not) to share
+
+- Anything that you found online that isn't licensed for reuse - *more on licences later*!
+
+. . . 
+
+- An obvious issue is personal data, especially sensitive personal data - *more on this later*!
+
+. . . 
+
+- Confidential data that's commercially sensitive or relevant for national security - talk to the data provider about what you **can** share.
+
+. . . 
+
+- Really big data (e.g. in quantum computing, cosmology) - think about what data is **necessary** and whether the data can be recreated.
+
+## How to share?
+
+![](images/FAIRPrinciples.jpg){fig-align="center"}
+
+
+## Findable: Metadata :mag:
+
+First people need to be able to find your outputs!
+
+. . .
+
+For outputs to be findable, they need to be described with **rich metadata**.
+These metadata can be generic (e.g. title, author name, keywords) or discipline-specific.
+
+## Findable: Persistent identifiers :mag:
+
+Outputs should also be assigned a **unique and persistent identifier**, e.g. a Digital Object Identifier (DOI).
+This makes it easy to find outputs, but also to link them with other relevant information (e.g. a publication).
+
+![](images/DOI.jpg){fig-align="center"}
+
+
+## Findable: Persistent identifiers for people :mag:
+
+Persistent identifiers for researchers help if you have a common name or if you change your name!
+
+![](images/OrcidIDs.jpg){fig-align="center"}
+
+
+## Task: Create an ORCID iD {background-color="#F2B705"}
+
+```{r}
+library(countdown)
+countdown(minutes = 5)
+```
+
+:alarm_clock: **5 minutes**
+
+1. Navigate to [https://orcid.org/](https://orcid.org/) on your browser
+2. Select Sign in/Register and then Register as a new user
+3. Fill in the information required
+
+
+## Accessible: Define processes :door:
+
+After people have found your outputs they need to be able to access them!
+This could mean that they are publicly available in a **repository**.
+
+. . .
+
+<br>
+
+### :warning: Sensitive information
+
+Most of you will be working with sensitive personal information that need to stay restricted :lock:
+
+. . .
+
+<br>
+
+In those cases, the **access method should be described** and the **metadata should still be accessible**.
+
+
+## Interoperable :gear:
+
+It's important to make all your outputs available in **open file formats**, that anyone can open and edit.
+
+. . .
+
+<br>
+
+Using **controlled vocabularies** is also highly recommended, if these exist in your field.
+
+## In how many different ways can you say "female"? {.smaller}
+
+:::: {.columns}
+
+::: {.column width="25%"}
+18-day pregnant females <br>
+female (lactating) <br>
+individual female <br>
+worker caste (female) <br>
+2 yr old female <br>
+female (pregnant) <br>
+sex: female <br>
+400 yr. old female <br>
+female (outbred) <br>
+mare <br>
+female (other) <br>
+adult female <br>
+female parent <br>
+female (worker) <br>
+female plant
+:::
+
+::: {.column width="25%"}
+femal <br>
+castrate female <br>
+female with eggs <br>
+ovigerous female <br>
+3 female <br>
+cf.female <br>
+female worker <br>
+oviparous sexual females <br>
+female (phenotype) <br>
+cystocarpic female <br>
+gynoecious <br>
+thelytoky <br>
+dikaryon <br>
+female virgin <br>
+dioecious female
+
+:::
+
+::: {.column width="25%"}
+femlale <br>
+female (gynoecious) <br>
+remale <br>
+metafemale <br>
+f <br>
+femele <br>
+sterile female <br>
+famale <br>
+normal female <br>
+femail <br>
+sf <br>
+female <br>
+females <br>
+tetraploid female <br>
+strictly female
+females only <br>
+:::
+
+::: {.column width="25%"}
+
+worker <br>
+hexaploid female <br>
+healthy female <br>
+female (gynoecious) <br>
+probably female <br>
+female (note: this sample was originally provided as a "male" sample and labeled this way in the paper and original submission; however analyses carried out in the meantime clearly show that this sample stems from a female individual)
+
+:::
+
+
+::::
+
+::: aside
+Adapted from Silvester *et al.*, 2015.
+:::
+
+## In how many different ways can you say "female"? {.smaller}
+
+:::: {.columns}
+
+::: {.column width="25%"}
+18-day pregnant females <br>
+female (lactating) <br>
+individual female <br>
+worker caste (female) <br>
+2 yr old female <br>
+female (pregnant) <br>
+sex: female <br>
+400 yr. old female <br>
+female (outbred) <br>
+mare <br>
+female (other) <br>
+adult female <br>
+female parent <br>
+female (worker) <br>
+female plant
+:::
+
+::: {.column width="25%"}
+[femal]{style="color:#F2B705"} <br>
+castrate female <br>
+female with eggs <br>
+ovigerous female <br>
+3 female <br>
+cf.female <br>
+female worker <br>
+oviparous sexual females <br>
+female (phenotype) <br>
+cystocarpic female <br>
+gynoecious <br>
+thelytoky <br>
+dikaryon <br>
+female virgin <br>
+dioecious female
+
+:::
+
+::: {.column width="25%"}
+[femlale]{style="color:#F2B705"} <br>
+female (gynoecious) <br>
+[remale]{style="color:#F2B705"} <br>
+metafemale <br>
+f <br>
+[femele]{style="color:#F2B705"} <br>
+sterile female <br>
+[famale]{style="color:#F2B705"} <br>
+normal female <br>
+[femail]{style="color:#F2B705"} <br>
+sf <br>
+female <br>
+females <br>
+tetraploid female <br>
+strictly female
+females only <br>
+:::
+
+::: {.column width="25%"}
+
+worker <br>
+hexaploid female <br>
+healthy female <br>
+female (gynoecious) <br>
+probably female <br>
+[female (note: this sample was originally provided as a "male" sample and labeled this way in the paper and original submission; however analyses carried out in the meantime clearly show that this sample stems from a female individual)]{style="color:#F2B705"}
+
+:::
+
+
+::::
+
+::: aside
+Adapted from Silvester *et al.*, 2015.
+:::
+
+## Dates
+
+To avoid ambiguity, use the [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) standard: **YYYYMMDD**.
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Date_format_by_country_revised.svg/1600px-Date_format_by_country_revised.svg.png){width=900 height=500}
+
+::: aside
+
+This [image](https://en.m.wikipedia.org/wiki/File:Date_format_by_country_revised.svg) was created for [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page) and is used under a [CC-BY-SA licence](https://creativecommons.org/licenses/by-sa/4.0/).
+
+:::
+
+
+## Reusable: Documentation :recycle:
+
+To be able to reuse your work, people need to be able to *understand* it.
+This means you need to provide good **documentation**:
+
+. . .
+
+<br>
+
+At a minimum, you should provide a **README** file where you describe what the project is about, how the files are organised and how to reproduce the project
+
+## Example of a [README file]((https://www.zenodo.net/record/1411479#.ZEY_V3bMIV-))
+
+![](images/zenodo-sw.png)
+
+
+## Reusable: Usage licences :recycle:
+
+You can't just use everything that's online; the creator* of the work holds the copyright to it!
+
+::: aside
+*In fact, it is often your university or institute that holds the copyright to the work you created while working there.
+:::
+
+. . .
+
+You need to **tell people what they can do** with your work by providing a licence.
+
+. . .
+
+Usage licences are different for data and for code:
+
+- Commonly used licences for data, presentations, papers etc. are the [Creative Commons licences](https://creativecommons.org/about/cclicenses/)
+- For code, use [OSI-approved licences](https://choosealicense.com/licenses/)
+
+## Licence example
+
+![](images/zenodo-ttw.png)
+
+## Creative Commons (CC) licences
+
+![](https://upload.wikimedia.org/wikipedia/commons/a/a5/CC_License_Freedom_Scale_Chart.png?20161006115208){fig-align="center"}
+
+::: {style="font-size: 60%;"}
+Source: [How to attribute Creative Commons photos by Foter](https://foter.com/blog/how-to-attribute-creative-commons-photos/)
+:::
+
+## Where to share?
+
+```{mermaid}
+flowchart LR
+  A(Supplementary materials) --> B(Specialised or generic repository) --> C(Data or software article) 
+```
+
+## Where to share: Supplementary materials
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+#### Pros :thumbsup:
+
+- Convenient for author
+- One output to cite (?)
+
+:::
+
+::: {.column width="50%"}
+
+#### Cons :thumbsdown:
+
+- Can be hard to find
+- Not suitable for all outputs (in terms of privacy, file format, relevance)
+- Not very FAIR (no separate PID, licence)
+- Sustainability is unclear
+
+:::
+
+::::
+
+## Where to share: Repositories
+
+Online storage spaces for sharing research data and other outputs: they can be generic or specific to a discipline or institute.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+#### Pros :thumbsup:
+
+- Provide a DOI or other PID
+- Require metadata
+- Require a usage licence
+- Encourage documentation
+- Encourage open file formats
+- Continued access
+
+:::
+
+::: {.column width="50%"}
+
+#### Cons :thumbsdown:
+
+- Require more knowledge (e.g. to pick a repository, licence etc.)
+- Could initially cause confusion in terms of whether the publication or this deposisition should be cited.
+
+:::
+
+::::
+
+
+## Discipline-specific repositories
+
+Where possible, it's a good idea to use a disclipline-specific repository, usually for data and publications.
+
+. . . 
+
+- The metadata standard is likely to be tailored to the data you work with
+
+. . .
+
+- It is possible that there are restricted access options to account for privacy concerns.
+
+. . .
+
+- Fewer people may see your data, but they're more likely to be interested in it.
+
+## How to find repositories?
+
+![](images/re3data.png)
+
+::: aside
+[Registry of research data repositories](https://www.re3data.org/)
+:::
+
+## Health data
+
+::: {.r-stack}
+
+![](images/hdruk.png){.fragment}
+
+![](images/closer.png){.fragment}
+
+![](images/vivli.png){.fragment}
+
+:::
+
+::: aside
+[Health Data Research Innovation Gateway](https://www.healthdatagateway.org/), [Closer](https://covid-19.closer.ac.uk/covid-19-survey-data/), [Vivli](https://vivli.org/)
+:::
+
+## Other human biological data
+
+::: {.r-stack}
+
+![](images/gwas.png){.fragment}
+
+![](images/open-fmri.png){.fragment}
+
+:::
+
+::: aside
+[GWAS Catalog](https://www.ebi.ac.uk/gwas/), [OpenfMRI](https://openfmri.org/)
+:::
+
+## Social Sciences data
+
+![](images/uk-data-service.png)
+
+::: aside
+[UK Data Service](https://ukdataservice.ac.uk/)
+:::
+
+## Protocols
+
+![](images/protocols.png)
+
+::: aside
+[protocols.io](https://www.protocols.io/)
+:::
+
+
+## Generic repositories
+
+A domain-specific repository is not always available, or it may not make sense for your outputs.
+In that case there are generic repositories that are domain-agnostic and which accept a broad range of outputs (e.g. from data to illustrations).
+
+## Zenodo
+
+[Zenodo](https://zenodo.org/) is an open repository that accepts most research outputs.
+
+- :white_check_mark: Funded by CERN, OpenAIRE, and the European Commission.
+- :white_check_mark: Built on open source infrastructure
+- :warning: Most resources are Open Access, though embargo and restricted options exist.
+
+![](images/zenodo.png)
+
+
+
+## Zenodo communities
+
+![](images/ai-mltc-community.png)
+
+## Demo of data upload {background-color="#F2B705"}
+
+Just watch me for now :computer::eyes:
+
+## Picking a repository
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/trust-principles.png)
+:::
+
+::: aside
+Source: [The TRUST Principles - An RDA Community Effort](https://www.rd-alliance.org/trust-principles-rda-community-effort)
+:::
+
+::: {.column width="60%"}
+![](images/trust-principles-explained.png)
+
+:::
+
+::::
+
+
+## Where to share: Data or software paper
+
+For data or software of special importance, you may consider writing a data or software article.
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+#### Pros :thumbsup:
+
+- Additional publication
+- More space to dig into methodology than in a traditional article
+
+:::
+
+
+::: {.column width="50%"}
+
+#### Cons :thumbsdown:
+
+- More time-consuming
+
+:::
+
+::::
+
+
+## Example of a data paper
+
+![](images/scientific-data-example.png)
+
+::: aside
+[scientific data](https://doi.org/10.1038/s41597-023-02125-y)
+:::
+
+## Example of a software paper
+
+![](images/joss-example.png)
+
+::: aside
+[Journal of Open Source Software](https://doi.org/10.21105/joss.05153)
+:::
+
+## Summary
+
+- There are more research outputs worth publishing than the traditional paper!
+- These outputs should be published in accordance with the FAIR principles.
+- Outputs don't need to be open to be FAIR.
+- Repositories (discipline-specific or generic) are a great place to publish your outputs.
+- Data or software papers may be suitable for more impactful outputs.
+
+## Thank you!
+
+![](images/thank-you.jpg){fig-align="center"}
+
+## References {.smaller}
+- Buckheit, J.B., Donoho, D.L. (1995). WaveLab and Reproducible Research. In: Antoniadis, A., Oppenheim, G. (eds) Wavelets and Statistics. Lecture Notes in Statistics, vol 103. Springer, New York, NY. [https://doi.org/10.1007/978-1-4612-2544-7_5](https://doi.org/10.1007/978-1-4612-2544-7_5)
+- Ding, K., Zhou, M., Wang, H. et al. A Large-scale Synthetic Pathological Dataset for Deep Learning-enabled Segmentation of Breast Cancer. Sci Data 10, 231 (2023). [https://doi.org/10.1038/s41597-023-02125-y](https://doi.org/10.1038/s41597-023-02125-y)
+- Evelina Gabasova. (2016). Star Wars social network (1.0.1) [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.1411479](https://doi.org/10.5281/zenodo.1411479).
+- Hansen et al., (2023). TextDescriptives: A Python package for calculating a large variety of metrics from text. Journal of Open Source Software, 8(84), 5153, [https://doi.org/10.21105/joss.05153](https://doi.org/10.21105/joss.05153).
+- Lin, D., Crabtree, J., Dillo, I. et al. The TRUST Principles for digital repositories. Sci Data 7, 144 (2020). [https://doi.org/10.1038/s41597-020-0486-7](https://doi.org/10.1038/s41597-020-0486-7).
+- Silvester, N., B. Alako, C. Amid, et al. (2015). Content discovery and retrieval services at the European Nucleotide Archive. Vol. 43 , pp. D23-D29. [DOI: 10.1093/nar/gku1129](https://doi.org/10.1093/nar/gku1129).
+- The Turing Way Community, & Scriberia. (2023). Illustrations from The Turing Way: Shared under CC-BY 4.0 for reuse. Zenodo. [https://doi.org/10.5281/zenodo.7587336](https://doi.org/10.5281/zenodo.7587336).
+
