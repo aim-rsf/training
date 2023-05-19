@@ -1,3 +1,5 @@
+[![CC BY 4.0][cc-by-shield]][cc-by]
+
 # About
 This repository contains the slides for the *How to publish FAIR research outputs* session of the 2023 [AIM RSF Conference](https://uobevents.eventsair.com/alan-turing/), which was organised by the AI for Multiple Long-term Conditions Research Support Facility (AIM RSF) on 26 and 27 April 2023 in Birmingham, UK.
 The session tool place on 27 April at 14:30 BST.
