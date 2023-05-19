@@ -1,3 +1,5 @@
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # R Shiny Workshop
 :spiral_calendar: Wednesday 1 March 2023
 
@@ -54,4 +56,4 @@ Note: The data used in the Parts 2 and 3 were downloaded using the following req
 - [Shiny tutorial](https://shiny.rstudio.com/tutorial/)
 - [Shiny gallery](https://shiny.rstudio.com/gallery/)
 
-
+These materials are licensed under an [MIT licence](https://opensource.org/license/mit/).
