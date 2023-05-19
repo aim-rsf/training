@@ -14,7 +14,7 @@ This repository holds information about the training delivered by the AIM RSF:
 | ------------------| -----------------------------------------------------------|-------------------|
 | 21 June 2023      | Introduction to version control and git                    | Rachael Stickland |
 | 28 June 2023      | Introduction to GitHub                                     | TBD               |
-| 5 July 202        | Introduction to GitHub for Collaboration                   | TBD               |
+| 5 July 2023       | Introduction to GitHub for Collaboration                   | TBD               |
 | TBD               | GitHub for Project Management (postponed from 26 Oct 2022) | Sophia Batchelor  |
 
 ## Past events
