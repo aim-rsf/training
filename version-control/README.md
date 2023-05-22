@@ -14,6 +14,7 @@ This work is licensed under a [Creative Commons Attribution 4.0 International Li
 ## Resources
 Existing resources on teaching `git` and GitHub:
 - [Anna Krystalli's *Version Control with Git*](https://annakrystalli.me/rrresearch/06_git.html)
+- [Eirini's previous workshop on teaching version control with GitHub](https://aim-rsf.github.io/training/github-intro/github-intro-slides#1)
 - Some of [Rachael's old slides](https://docs.google.com/presentation/d/1oqT2rsicEtOUTyAyFQC1iSlwIpFOOEFwxjolpxBYJWw/edit#slide=id.g167e78d774d_0_834)
 - [GitHub docs on using GitHub desktop](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop)
 - [Code Refinery lesson on Using GitHub without the command line](https://coderefinery.github.io/github-without-command-line/)

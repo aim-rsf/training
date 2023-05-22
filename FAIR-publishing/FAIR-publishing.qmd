@@ -423,7 +423,10 @@ Source: [How to attribute Creative Commons photos by Foter](https://foter.com/bl
 
 ```{mermaid}
 flowchart LR
-  A(Supplementary materials) --> B(Specialised or generic repository) --> C(Data or software article) 
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+  C --> D[Result one]
+  C --> E[Result two]
 ```
 
 ## Where to share: Supplementary materials
