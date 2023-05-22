@@ -1,6 +1,6 @@
 # About
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7078401.svg)](https://doi.org/10.5281/zenodo.7078401) [![CC BY 4.0][cc-by-shield]][cc-by]
+[![CC BY 4.0][cc-by-shield]][cc-by]
 
 This repository is used to create the materials for the upcoming [AIM RSF](https://www.turing.ac.uk/research/research-projects/ai-multiple-long-term-conditions-research-support-facility) workshop series on version control.
 
