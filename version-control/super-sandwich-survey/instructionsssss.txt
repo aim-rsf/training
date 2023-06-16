@@ -1,0 +1,12 @@
+When you come across a new sandwich please edit the new_sandwich_sightings.csv by adding a new line.
+Three sandwich sightings have been provided as examples. 
+
+Descriptions of the column names in the csv file:
+
+EXAMPLE: Y = yes, N = no. Yes means that this sandwich was an example sandwich provided by the organisers of this sandwich survey. 
+SANDWICH NAME: The name of the sandwich that was used by the establishment selling it, or used by the person making it. 
+LOCATION: Location of sandwich sighting. 
+INITIALS: Your initials.
+TYPE: Type of interaction you had with the sandwich. 'S' if you just had a sighting of the sandwich or 'T' if you also tasted the sandwich.
+DATE: When the sandwich sighting occurred (yyyy-mm-dd).
+
