@@ -1,7 +1,5 @@
-You will log your detailed sandwich activities in the app provided.
-This repository is for logging new sandwich sightings only (that are not in the app).
 When you come across a new sandwich please edit the new_sandwich_sightings.csv by adding a new line.
-Three example sandwich sightings have been provided as examples. 
+Three sandwich sightings have been provided as examples. 
 
 Descriptions of the column names in the csv file:
 
@@ -12,7 +10,3 @@ INITIALS: Your initials.
 TYPE: Type of interaction you had with the sandwich. 'S' if you just had a sighting of the sandwich or 'T' if you also tasted the sandwich.
 DATE: When the sandwich sighting occurred (yyyy-mm-dd).
 
-Common FAQs for the app: 
-
-- FAQ1
-- FAQ2
