@@ -1,6 +1,6 @@
 # About
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This repository holds information about the training delivered by the AIM RSF:
@@ -48,6 +48,7 @@ This repository holds information about the training delivered by the AIM RSF:
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/eirini-zormpa"><img src="https://avatars.githubusercontent.com/u/30151074?v=4?s=100" width="100px;" alt="Eirini Zormpa"/><br /><sub><b>Eirini Zormpa</b></sub></a><br /><a href="#content-eirini-zormpa" title="Content">🖋</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://www.brainonsilicon.com"><img src="https://avatars.githubusercontent.com/u/42813259?v=4?s=100" width="100px;" alt="Sophia Batchelor"/><br /><sub><b>Sophia Batchelor</b></sub></a><br /><a href="#tutorial-BrainonSilicon" title="Tutorials">✅</a> <a href="#talk-BrainonSilicon" title="Talks">📢</a> <a href="#mentoring-BrainonSilicon" title="Mentoring">🧑‍🏫</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://linkedin.com/in/rstickland-phd"><img src="https://avatars.githubusercontent.com/u/50215726?v=4?s=100" width="100px;" alt="Rachael Stickland"/><br /><sub><b>Rachael Stickland</b></sub></a><br /><a href="#mentoring-RayStick" title="Mentoring">🧑‍🏫</a> <a href="#tutorial-RayStick" title="Tutorials">✅</a> <a href="#talk-RayStick" title="Talks">📢</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://evelinag.com"><img src="https://avatars.githubusercontent.com/u/5541162?v=4?s=100" width="100px;" alt="Evelina Gabasova"/><br /><sub><b>Evelina Gabasova</b></sub></a><br /><a href="#tutorial-evelinag" title="Tutorials">✅</a> <a href="#talk-evelinag" title="Talks">📢</a> <a href="#ideas-evelinag" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>
 </table>

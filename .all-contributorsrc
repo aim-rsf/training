@@ -36,6 +36,17 @@
         "tutorial",
         "talk"
       ]
+    },
+    {
+      "login": "evelinag",
+      "name": "Evelina Gabasova",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5541162?v=4",
+      "profile": "http://evelinag.com",
+      "contributions": [
+        "tutorial",
+        "talk",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
