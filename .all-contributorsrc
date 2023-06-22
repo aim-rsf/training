@@ -25,6 +25,17 @@
         "talk",
         "mentoring"
       ]
+    },
+    {
+      "login": "RayStick",
+      "name": "Rachael Stickland",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50215726?v=4",
+      "profile": "http://linkedin.com/in/rstickland-phd",
+      "contributions": [
+        "mentoring",
+        "tutorial",
+        "talk"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -32,5 +43,6 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "projectName": "training",
-  "projectOwner": "aim-rsf"
+  "projectOwner": "aim-rsf",
+  "commitType": "docs"
 }
