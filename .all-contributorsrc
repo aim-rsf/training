@@ -52,6 +52,15 @@
         "talk",
         "ideas"
       ]
+    },
+    {
+      "login": "FrikadEllen",
+      "name": "Ellen D Moss",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38990372?v=4",
+      "profile": "https://github.com/FrikadEllen",
+      "contributions": [
+        "mentoring"
+      ]
     }
   ],
   "contributorsPerLine": 7,
