@@ -52,6 +52,15 @@
         "talk",
         "ideas"
       ]
+    },
+    {
+      "login": "raniakous",
+      "name": "Rania Kousovista",
+      "avatar_url": "https://avatars.githubusercontent.com/u/109738231?v=4",
+      "profile": "https://github.com/raniakous",
+      "contributions": [
+        "mentoring"
+      ]
     }
   ],
   "contributorsPerLine": 7,
