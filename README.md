@@ -1,6 +1,6 @@
 # About
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This repository holds information about the training delivered by the AIM RSF:
@@ -52,6 +52,9 @@ This repository holds information about the training delivered by the AIM RSF:
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/rhenkin"><img src="https://avatars.githubusercontent.com/u/1545093?v=4?s=100" width="100px;" alt="Rafael Henkin"/><br /><sub><b>Rafael Henkin</b></sub></a><br /><a href="#mentoring-rhenkin" title="Mentoring">🧑‍🏫</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/FrikadEllen"><img src="https://avatars.githubusercontent.com/u/38990372?v=4?s=100" width="100px;" alt="Ellen D Moss"/><br /><sub><b>Ellen D Moss</b></sub></a><br /><a href="#mentoring-FrikadEllen" title="Mentoring">🧑‍🏫</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://batool-almarzouq.netlify.app/"><img src="https://avatars.githubusercontent.com/u/53487593?v=4?s=100" width="100px;" alt="Batool Almarzouq"/><br /><sub><b>Batool Almarzouq</b></sub></a><br /><a href="#mentoring-BatoolMM" title="Mentoring">🧑‍🏫</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/paola-g"><img src="https://avatars.githubusercontent.com/u/7580862?v=4?s=100" width="100px;" alt="paola-g"/><br /><sub><b>paola-g</b></sub></a><br /><a href="#mentoring-paola-g" title="Mentoring">🧑‍🏫</a></td>
     </tr>
   </tbody>
 </table>
