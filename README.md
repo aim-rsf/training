@@ -12,8 +12,7 @@ This repository holds information about the training delivered by the AIM RSF:
 
 | Date              | Title                                                      | Speaker           |
 | ------------------| -----------------------------------------------------------|-------------------|
-| 21 June 2023      | Introduction to version control and git                    | Rachael Stickland |
-| 28 June 2023      | Introduction to GitHub                                     | TBD               |
+| 28 June 2023      | Introduction to GitHub                                     | Eirini Zormpa     |
 | 5 July 2023       | Introduction to GitHub for Collaboration                   | TBD               |
 | TBD               | GitHub for Project Management (postponed from 26 Oct 2022) | Sophia Batchelor  |
 
@@ -23,6 +22,7 @@ This repository holds information about the training delivered by the AIM RSF:
 
 | Date             | Title                                                   | Speaker          |
 | -----------------| ------------------------------------------------------- |------------------|
+| 21 June 2023      | Introduction to version control and git               | Rachael Stickland |
 | 27 April 2023    | How to publish FAIR research outputs                    | Eirini Zormpa    |
 | 1 March 2023     | Interactive dashboards with `R Shiny`                   | Evelina Gabasova |
 | 11 January 2023  | Data Carpentry: Literate programming with `R Markdown`  | Eirini Zormpa    |

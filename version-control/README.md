@@ -2,12 +2,15 @@
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
-This repository is used to create the materials for the upcoming [AIM RSF](https://www.turing.ac.uk/research/research-projects/ai-multiple-long-term-conditions-research-support-facility) workshop series on version control.
+This repository contains the materials for the upcoming [AIM RSF](https://www.turing.ac.uk/research/research-projects/ai-multiple-long-term-conditions-research-support-facility) workshop series on version control.
 
-There are three workshops in this series, all taking place on consecutive Wednesday fomr 14:30 to 16:30 BST in June and July 2023.
+There are three workshops in this series, all taking place on consecutive Wednesday from 14:30 to 16:30 BST in June and July 2023.
 - Introduction to version control with `git`
 - Introduction to GitHub
 - Collaborating with others using GitHub
+
+You can find the slides that were used in the sessions in the `slides` folder.
+The `walk-throughs` folder contains files with the steps taken during the interactive parts of the workshops and shows how to perform the equivalent actions using the command line.
 
 This work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
 
