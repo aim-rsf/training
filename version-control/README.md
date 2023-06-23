@@ -11,6 +11,8 @@ There are three workshops in this series, all taking place on consecutive Wednes
 
 You can find the slides that were used in the sessions in the `slides` folder.
 The `walk-throughs` folder contains files with the steps taken during the interactive parts of the workshops and shows how to perform the equivalent actions using the command line.
+The recordings of the sessions are on YouTube:
+- [Recording of "Introduction to version control with `git`"](https://youtu.be/z9-qAGq78qE)
 
 This work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
 
