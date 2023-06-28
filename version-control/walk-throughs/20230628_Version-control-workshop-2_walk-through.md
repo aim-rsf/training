@@ -41,13 +41,18 @@ git diff
 
 #### On GitHub Desktop
 
+> :warning: There should be screenshots here, which for whatever reason aren't displaying at the moment.
+> I've just copied and pasted the links to the images so you can just click through to see them until I figure out what's gone wrong 😅
+
 1. Click on `Publish repository`
 
-![](https://hackmd.io/_uploads/B1urqZzd3.png)
+https://hackmd.io/_uploads/B1urqZzd3.png
+
+<!--![](https://hackmd.io/_uploads/B1urqZzd3.png)-->
 
 2. Untick the `Keep this code private box` and click on `Publish repository`
-
-![](https://hackmd.io/_uploads/HkR2AZMOn.png)
+https://hackmd.io/_uploads/HkR2AZMOn.png
+<!--![](https://hackmd.io/_uploads/HkR2AZMOn.png)-->
 
 #### Or if you're not using GitHub Desktop:
 
@@ -66,17 +71,16 @@ It is standard practice to name the remote repository `origin`.
 
 ### 3. GitHub orientation
 There's so much going on!
-
-![](https://hackmd.io/_uploads/Hk2B-1mOn.png)
-
+https://hackmd.io/_uploads/Hk2B-1mOn.png
+<!--![](https://hackmd.io/_uploads/Hk2B-1mOn.png)-->
 
 ### 4. Make a change and push the changed file to the remote
 
 Add the sandwich-recipes.md to your project folder and commit the change.
 
 #### On GitHub Desktop
-
-![](https://hackmd.io/_uploads/r1Wi0-m_h.png)
+https://hackmd.io/_uploads/r1Wi0-m_h.png
+<!--![](https://hackmd.io/_uploads/r1Wi0-m_h.png)-->
 
 
 #### On the command line
@@ -93,11 +97,14 @@ git push
 
 #### On GitHub Desktop
 Fetch the latest changes
-![](https://hackmd.io/_uploads/rJTBPlmO2.png)
+
+https://hackmd.io/_uploads/rJTBPlmO2.png
+<!--![](https://hackmd.io/_uploads/rJTBPlmO2.png)-->
 
 And pull them into your working directory
 
-![](https://hackmd.io/_uploads/Sy0PwgQ_3.png)
+https://hackmd.io/_uploads/Sy0PwgQ_3.png
+<!--![](https://hackmd.io/_uploads/Sy0PwgQ_3.png)-->
 
 #### On the command line
 
@@ -109,7 +116,8 @@ git pull
 
 #### On GitHub Desktop
 
-![](https://hackmd.io/_uploads/Hkg-Ub7O2.png)
+https://hackmd.io/_uploads/Hkg-Ub7O2.png
+<!--![](https://hackmd.io/_uploads/Hkg-Ub7O2.png)-->
 
 #### On the command line
 
@@ -132,13 +140,13 @@ Turn the BLT to a BT sandwich
 
 1. Click on the `Current Branch` tab and make sure you're on `main`. Click the `Choose a branch to merge into main` button.
 
-
-![](https://hackmd.io/_uploads/rkJweG7dn.png)
+https://hackmd.io/_uploads/rkJweG7dn.png
+<!--![](https://hackmd.io/_uploads/rkJweG7dn.png)-->
 
 2. Select the `recipe experiment` branch and click on the `Create a merge commit` button.
 
-
-![](https://hackmd.io/_uploads/HJBPlMXu3.png)
+https://hackmd.io/_uploads/HJBPlMXu3.png
+<!--![](https://hackmd.io/_uploads/HJBPlMXu3.png)-->
 
 #### On the command line
 
@@ -157,7 +165,8 @@ Make the BT sandwich vegetarian and commit the change to the `recipe-experiment`
 
 #### On GitHub Desktop
 
-![](https://hackmd.io/_uploads/r1-5gywu2.png)
+https://hackmd.io/_uploads/r1-5gywu2.png
+<--![](https://hackmd.io/_uploads/r1-5gywu2.png)-->
 
 #### On the command line
 
@@ -183,26 +192,31 @@ Make changes on a branch that's already on GitHub (or push it to GitHub)
 
 1. Click on the button `Preview Pull Request`
 
-![](https://hackmd.io/_uploads/SJzGxkvOh.png)
+https://hackmd.io/_uploads/SJzGxkvOh.png
+<!--![](https://hackmd.io/_uploads/SJzGxkvOh.png)-->
 
 2. A wizard will open up. Click on `Create pull request`
 
-![](https://hackmd.io/_uploads/BJr_2kvOh.png)
+https://hackmd.io/_uploads/BJr_2kvOh.png
+<!--![](https://hackmd.io/_uploads/BJr_2kvOh.png)-->
 
 
 3. Your browser window will open up with a wizard to open a pull request. Add any additional information, if you want and click on `Create pull request`.
 
 Note that the diffs on this screenshot will be different - I took the screenshot while trying something else out. The actual changes I made to the file don't matter, I'm just trying to show you what the windows that'll pop up will look like.
 
-![](https://hackmd.io/_uploads/S10FO1Ddh.png)
+https://hackmd.io/_uploads/S10FO1Ddh.png
+<!--![](https://hackmd.io/_uploads/S10FO1Ddh.png)-->
 
 4. Click on `Merge pull request` and `Confirm merge`.
 
-![](https://hackmd.io/_uploads/H1RsOywuh.png)
+https://hackmd.io/_uploads/H1RsOywuh.png
+<!--![](https://hackmd.io/_uploads/H1RsOywuh.png)-->
 
 5. If you want, delete the branch by clicking on `Delete branch`
 
-![](https://hackmd.io/_uploads/SJmTuJwO2.png)
+https://hackmd.io/_uploads/SJmTuJwO2.png
+<!--![](https://hackmd.io/_uploads/SJmTuJwO2.png)-->
 
 #### On GitHub
 
@@ -210,7 +224,8 @@ Although it's technically possible to start a pull request from the command line
 
 For this workshop, I'd recommend switching to GitHub.com and starting the pull request from there.
 
-![](https://hackmd.io/_uploads/Hyv5j1w_3.png)
+https://hackmd.io/_uploads/Hyv5j1w_3.png
+<!--![](https://hackmd.io/_uploads/Hyv5j1w_3.png)-->
 
 You can then follow along with the steps above, starting at 3.
 
