@@ -11,18 +11,19 @@ There are three workshops in this series, all taking place on consecutive Wednes
 
 You can find the slides that were used in the sessions in the `slides` folder.
 The `walk-throughs` folder contains files with the steps taken during the interactive parts of the workshops and shows how to perform the equivalent actions using the command line.
+
 The recordings of the sessions are on YouTube:
 - [Recording of "Introduction to version control with `git`"](https://youtu.be/z9-qAGq78qE)
+- [Recording of "Introduction to GitHub"](https://youtu.be/9mnKloUiTUc)
 
-This work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
-
-## Resources
-Existing resources on teaching `git` and GitHub:
-- [Anna Krystalli's *Version Control with Git*](https://annakrystalli.me/rrresearch/06_git.html)
-- [Eirini's previous workshop on teaching version control with GitHub](https://aim-rsf.github.io/training/github-intro/github-intro-slides#1)
+## Sources
 - [GitHub docs on using GitHub desktop](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop)
 - [Code Refinery lesson on Using GitHub without the command line](https://coderefinery.github.io/github-without-command-line/)
 - [Code Refinery lesson on Introduction to version control with git](https://coderefinery.github.io/git-intro/)
+
+## Resources
+Other resources on learning `git` and GitHub:
+- [Anna Krystalli's *Version Control with Git*](https://annakrystalli.me/rrresearch/06_git.html)
 - [Software Carpentry on Version control with git](https://swcarpentry.github.io/git-novice/)
 - [The Turing Way Chapter on Version Control](https://the-turing-way.netlify.app/reproducible-research/vcs.html)
 - [Happy Git and GitHub for the useR](https://happygitwithr.com/) by Jennifer Bryan - excellent guide for people already using R
@@ -31,6 +32,10 @@ Existing resources on teaching `git` and GitHub:
 - [Developing Collaborative Document](https://malvikasharan.github.io/developing_collaborative_document/) by Malvika Sharan
 - [Mozilla Science Lab Study Group Orientation Handbook](https://mozillascience.github.io/study-group-orientation/)
 - [A Friendly Github Intro Workshop](https://kirstiejane.github.io/friendly-github-intro/) presentations created by Kirstie Whitaker for the Mozilla Science Lab.
+
+## Licence
+
+This work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
 
 [![CC BY 4.0][cc-by-image]][cc-by]
 
