@@ -6,10 +6,9 @@ Use the line with the number next to which you wrote your name in the HackMD to 
 
 1. γειά! 🌊
 2. 
-3. 
+3. hi from Ele
 4. 
-5. Mozhdeh
-6. 
+5. hi from Mozhdeh
 7. 
 8. 
 9. 
