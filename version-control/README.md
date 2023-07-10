@@ -15,6 +15,7 @@ The `walk-throughs` folder contains files with the steps taken during the intera
 The recordings of the sessions are on YouTube:
 - [Recording of "Introduction to version control with `git`"](https://youtu.be/z9-qAGq78qE)
 - [Recording of "Introduction to GitHub"](https://youtu.be/9mnKloUiTUc)
+- [Recording of "GitHub for Collaboration"](https://youtu.be/ejx_M5cgMsI)
 
 ## Sources
 - [GitHub docs on using GitHub desktop](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop)
