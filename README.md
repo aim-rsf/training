@@ -18,14 +18,15 @@ This repository holds information about the training delivered by the AIM RSF:
 
 ### 2023
 
-| Date             | Title                                                   | Speaker          |
-| -----------------| ------------------------------------------------------- |------------------|
-| 5 July 2023       | Introduction to GitHub for Collaboration               | Eirini Zormpa    |
-| 28 June 2023      | Introduction to GitHub                                 | Eirini Zormpa    |
-| 21 June 2023      | Introduction to version control and git               | Rachael Stickland |
-| 27 April 2023    | How to publish FAIR research outputs                    | Eirini Zormpa    |
-| 1 March 2023     | Interactive dashboards with `R Shiny`                   | Evelina Gabasova |
-| 11 January 2023  | Data Carpentry: Literate programming with `R Markdown`  | Eirini Zormpa    |
+| Date             | Title                                                   | Speaker           |
+| -----------------| ------------------------------------------------------- |-------------------|
+| 6 October 2023   | Public Outreach                                         | Jamie Gallager    |
+| 5 July 2023      | Introduction to GitHub for Collaboration                | Eirini Zormpa     |
+| 28 June 2023     | Introduction to GitHub                                  | Eirini Zormpa     |
+| 21 June 2023     | Introduction to version control and git                 | Rachael Stickland |
+| 27 April 2023    | How to publish FAIR research outputs                    | Eirini Zormpa     |
+| 1 March 2023     | Interactive dashboards with `R Shiny`                   | Evelina Gabasova  |
+| 11 January 2023  | Data Carpentry: Literate programming with `R Markdown`  | Eirini Zormpa     |
 
 ### 2022
 
