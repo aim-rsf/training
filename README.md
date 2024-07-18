@@ -12,7 +12,10 @@ This repository holds information about the training delivered by the AIM RSF:
 
 | Date              | Title                                                      | Speaker           |
 | ------------------| -----------------------------------------------------------|-------------------|
-| TBD               | GitHub for Project Management (postponed from 26 Oct 2022) | Sophia Batchelor  |
+| 10 July 2024 | Narrative CVs or R4RI | Jacqueline Aldridge, Emma Karoune |
+| 28 June 2024 | Introduction to Grant Writing | Jacqueline Aldridge, Emma Karoune, Emmy Boceage |
+| 7 & 14 March 2024 | Reproducible, Open, and FAIR Research - two workshops  | Emma Karoune & Anne Lee Steele |
+|TBD               | GitHub for Project Management (postponed from 26 Oct 2022) | Sophia Batchelor  |
 
 ## Past events
 
