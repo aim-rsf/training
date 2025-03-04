@@ -1,6 +1,8 @@
 # About
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7078401.svg)](https://doi.org/10.5281/zenodo.7078401) [![CC BY 4.0][cc-by-shield]][cc-by]
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7078401.svg)](https://doi.org/10.5281/zenodo.7078401) 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7213224.svg)](https://doi.org/10.5281/zenodo.7213224)
+[![CC BY 4.0][cc-by-shield]][cc-by]
 
 This repository contains the slides used for the [AIM RSF](https://www.turing.ac.uk/research/research-projects/ai-multiple-long-term-conditions-research-support-facility) Early Career Researcher lunchtime session on 21 July 2022, entitled *Version Control with GitHub: A gentle introduction for beginners* and for a follow up session delivered on 8 August 2022.
 
@@ -28,3 +30,7 @@ Further resources for learning GitHub:
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
+
+## Acknowledgments
+
+This training was organised by the [AI for Multiple Long Term Conditions Research Support Facility](https://www.turing.ac.uk/research/research-projects/ai-multiple-long-term-conditions-research-support-facility) (link to the [same archived website](https://web.archive.org/web/20250212145350/https://www.turing.ac.uk/research/research-projects/ai-for-multiple-long-term-conditions-research-support-facility?__cf_chl_rt_tk=XKaDrLiiU8hmzZk2rKaWDBVpnO8exVqC4EHijqlWTIQ-1739372030-1.0.1.1-hmHFksRkdOQcBH9PsOgRVdNAatQdr3i4hFOqtyPcyZU)). AIM RSF is funded by the NIHR Artificial Intelligence for Multiple Long-Term Conditions (AIM) programme (NIHR202647).
